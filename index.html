@@ -1,580 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Rita | Online Fitness, Mindset & Women's Transformation Coach</title>
-<meta name="description" content="Premium online coaching for women — fitness, mindset and lifestyle transformations with Rita. Build strength, confidence and the body you actually want." />
-<meta name="keywords" content="online fitness coach, women transformation coach, mindset coach, personal training, fitness program" />
-<meta property="og:title" content="Rita | Women's Transformation Coach" />
-<meta property="og:description" content="Imagine where you could be in 12 weeks — with structure, support and someone guiding you." />
-<meta property="og:image" content="assets/rita-hero.jpg" />
-<link rel="icon" href="assets/rita-hero.jpg" />
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        display: ['"Cormorant Garamond"', 'serif'],
-        sans: ['Inter', 'sans-serif'],
-      },
-      colors: {
-        cream: '#f7f1ea',
-        sand: '#ece2d4',
-        clay: '#c9a089',
-        rose: '#d39a92',
-        mocha: '#7a5a4a',
-        ink: '#1c1410',
-      },
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rita | Online Fitness, Mindset & Women's Transformation Coach</title>
+  <meta name="description"
+    content="Premium online coaching for women — fitness, mindset and lifestyle transformations with Rita. Build strength, confidence and the body you actually want." />
+  <meta name="keywords"
+    content="online fitness coach, women transformation coach, mindset coach, personal training, fitness program" />
+  <meta property="og:title" content="Rita | Women's Transformation Coach" />
+  <meta property="og:description"
+    content="Imagine where you could be in 12 weeks — with structure, support and someone guiding you." />
+  <meta property="og:image" content="assets/rita-hero.jpg" />
+  <link rel="icon" href="assets/rita-hero.jpg" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Cormorant Garamond"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            cream: '#f7f1ea',
+            sand: '#ece2d4',
+            clay: '#c9a089',
+            rose: '#d39a92',
+            mocha: '#7a5a4a',
+            ink: '#1c1410',
+          },
+        }
+      }
     }
-  }
-}
-</script>
-<style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background:#f7f1ea; color:#1c1410; }
-  .font-display { font-family: 'Cormorant Garamond', serif; }
-  .grad-hero {
-    background:
-      radial-gradient(1200px 600px at 80% -10%, rgba(211,154,146,.55), transparent 60%),
-      radial-gradient(900px 500px at -10% 20%, rgba(201,160,137,.45), transparent 60%),
-      linear-gradient(180deg, #f7f1ea 0%, #ece2d4 100%);
-  }
-  .grad-text {
-    background: linear-gradient(120deg,#7a5a4a 0%, #c9a089 50%, #d39a92 100%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }
-  .glass {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.6);
-  }
-  .glass-dark {
-    background: rgba(28,20,16,0.55);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .shadow-luxe { box-shadow: 0 30px 60px -25px rgba(122,90,74,.35), 0 8px 20px -10px rgba(122,90,74,.2); }
-  .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(.2,.7,.2,1); }
-  .reveal.in { opacity: 1; transform: none; }
-  .ticker { animation: ticker 40s linear infinite; }
-  @keyframes ticker { from { transform: translateX(0);} to { transform: translateX(-50%);} }
-  .float-btn { transition: transform .3s ease, box-shadow .3s ease; }
-  .float-btn:hover { transform: translateY(-3px) scale(1.05); }
-  .card-hover { transition: transform .5s cubic-bezier(.2,.7,.2,1), box-shadow .5s; }
-  .card-hover:hover { transform: translateY(-8px); box-shadow: 0 40px 60px -30px rgba(122,90,74,.45); }
-  .nav-blur { transition: background .4s, backdrop-filter .4s, box-shadow .4s; }
-  .nav-blur.scrolled { background: rgba(247,241,234,.75); backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(122,90,74,.08); }
-  details[open] summary .chev { transform: rotate(180deg); }
-  .chev { transition: transform .3s; }
-  .marquee-mask { mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-  .testi-track { transition: transform .8s cubic-bezier(.2,.7,.2,1); }
-  video { object-fit: cover; }
-  .grain::before {
-    content:""; position:absolute; inset:0; pointer-events:none; opacity:.06;
-    background-image: radial-gradient(rgba(0,0,0,.6) 1px, transparent 1px);
-    background-size: 3px 3px;
-  }
-</style>
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f7f1ea;
+      color: #1c1410;
+    }
+
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .grad-hero {
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(211, 154, 146, .55), transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, rgba(201, 160, 137, .45), transparent 60%),
+        linear-gradient(180deg, #f7f1ea 0%, #ece2d4 100%);
+    }
+
+    .grad-text {
+      background: linear-gradient(120deg, #7a5a4a 0%, #c9a089 50%, #d39a92 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .glass-dark {
+      background: rgba(28, 20, 16, 0.55);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .shadow-luxe {
+      box-shadow: 0 30px 60px -25px rgba(122, 90, 74, .35), 0 8px 20px -10px rgba(122, 90, 74, .2);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .ticker {
+      animation: ticker 40s linear infinite;
+    }
+
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .float-btn {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .float-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+
+    .card-hover {
+      transition: transform .5s cubic-bezier(.2, .7, .2, 1), box-shadow .5s;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 40px 60px -30px rgba(122, 90, 74, .45);
+    }
+
+    .nav-blur {
+      transition: background .4s, backdrop-filter .4s, box-shadow .4s;
+    }
+
+    .nav-blur.scrolled {
+      background: rgba(247, 241, 234, .75);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(122, 90, 74, .08);
+    }
+
+    details[open] summary .chev {
+      transform: rotate(180deg);
+    }
+
+    .chev {
+      transition: transform .3s;
+    }
+
+    .marquee-mask {
+      mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+    }
+
+    .testi-track {
+      transition: transform .8s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    video {
+      object-fit: cover;
+    }
+
+    .grain::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: .06;
+      background-image: radial-gradient(rgba(0, 0, 0, .6) 1px, transparent 1px);
+      background-size: 3px 3px;
+    }
+  </style>
 </head>
+
 <body class="antialiased">
 
-<!-- NAV -->
-<header id="nav" class="nav-blur fixed top-0 inset-x-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2">
-      <span class="font-display text-2xl tracking-wide text-mocha">Rita<span class="text-rose">.</span></span>
-      <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-mocha/70">Fitness Coach</span>
-    </a>
-    <nav class="hidden lg:flex items-center gap-8 text-sm text-ink/80">
-      <a href="#programs" class="hover:text-rose">Programs</a>
-      <a href="#coaching" class="hover:text-rose">Coaching</a>
-      <a href="#results" class="hover:text-rose">Results</a>
-      <a href="#testimonials" class="hover:text-rose">Reviews</a>
-      <a href="#faq" class="hover:text-rose">FAQ</a>
-      <a href="#book" class="hover:text-rose">Contact</a>
-    </nav>
-    <a href="#book" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-cream text-sm hover:bg-mocha transition">
-      Book a call <i class="fa-solid fa-arrow-right text-xs"></i>
-    </a>
-    <button id="menuBtn" class="lg:hidden text-ink text-xl"><i class="fa-solid fa-bars"></i></button>
-  </div>
-  <div id="mobileMenu" class="hidden lg:hidden glass border-t border-white/40">
-    <div class="px-6 py-4 flex flex-col gap-4 text-ink">
-      <a href="#programs">Programs</a><a href="#coaching">Coaching</a><a href="#results">Results</a>
-      <a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="#book" class="text-rose font-medium">Book a call →</a>
-    </div>
-  </div>
-</header>
-
-<!-- HERO -->
-<section id="top" class="grad-hero relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden grain">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative">
-    <div class="reveal">
-      <span class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs uppercase tracking-[0.25em] text-mocha">
-        <span class="w-2 h-2 rounded-full bg-rose animate-pulse"></span> Now coaching women worldwide
-      </span>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mt-6">
-        Imagine where <br/> you could be in <span class="grad-text italic">12 weeks.</span>
-      </h1>
-      <p class="mt-6 text-lg text-ink/70 max-w-lg">
-        Premium online coaching for women ready to stop negotiating with themselves — fitness, mindset and lifestyle transformations with structure, support and someone actually guiding you.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-4">
-        <a href="#book" class="px-7 py-4 rounded-full bg-ink text-cream hover:bg-mocha transition shadow-luxe">
-          Start your transformation <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
-        </a>
-        <a href="#programs" class="px-7 py-4 rounded-full glass text-ink hover:bg-white/80 transition">
-          Explore programs
-        </a>
-      </div>
-      <div class="mt-10 flex items-center gap-6">
-        <div class="flex -space-x-3">
-          <img src="assets/transform-1.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover"/>
-          <img src="assets/transform-2.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover"/>
-          <img src="assets/transform-3.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover"/>
-          <div class="w-10 h-10 rounded-full bg-rose/80 text-white text-xs flex items-center justify-center border-2 border-cream">+800</div>
-        </div>
-        <div class="text-sm">
-          <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span class="text-ink font-medium">4.9/5</span></div>
-          <div class="text-ink/60">Loved by 800+ women clients</div>
-        </div>
-      </div>
-    </div>
-    <div class="reveal relative">
-      <div class="absolute -inset-6 grad-hero blur-2xl opacity-60 -z-10 rounded-[3rem]"></div>
-      <div class="relative rounded-[2.5rem] overflow-hidden shadow-luxe">
-        <img src="assets/rita-hero.jpg" alt="Rita - Fitness Coach" class="w-full h-[560px] object-cover" />
-        <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-4 flex items-center gap-4">
-          <div class="w-12 h-12 rounded-full bg-rose/90 flex items-center justify-center text-white"><i class="fa-solid fa-heart"></i></div>
-          <div>
-            <div class="text-xs uppercase tracking-widest text-mocha">Rita — Coach</div>
-            <div class="text-sm text-ink/80">Fitness · Mindset · Lifestyle</div>
-          </div>
-          <a href="https://instagram.com/rita_fitnesscoach" target="_blank" class="ml-auto text-mocha hover:text-rose"><i class="fa-brands fa-instagram text-xl"></i></a>
-        </div>
-      </div>
-      <div class="hidden md:block absolute -left-8 top-10 glass rounded-2xl px-4 py-3 shadow-luxe">
-        <div class="text-2xl font-display grad-text">-12kg</div>
-        <div class="text-[11px] uppercase tracking-widest text-mocha">avg client result</div>
-      </div>
-      <div class="hidden md:block absolute -right-6 bottom-24 glass rounded-2xl px-4 py-3 shadow-luxe">
-        <div class="text-2xl font-display grad-text">12 wks</div>
-        <div class="text-[11px] uppercase tracking-widest text-mocha">to a new you</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TICKER -->
-<section class="border-y border-mocha/10 bg-cream/60 py-5 marquee-mask overflow-hidden">
-  <div class="ticker flex gap-12 whitespace-nowrap text-mocha/70 font-display text-2xl">
-    <span>Strength</span><span class="text-rose">✦</span><span>Confidence</span><span class="text-rose">✦</span>
-    <span>Discipline</span><span class="text-rose">✦</span><span>Mindset</span><span class="text-rose">✦</span>
-    <span>Transformation</span><span class="text-rose">✦</span><span>Lifestyle</span><span class="text-rose">✦</span>
-    <span>Strength</span><span class="text-rose">✦</span><span>Confidence</span><span class="text-rose">✦</span>
-    <span>Discipline</span><span class="text-rose">✦</span><span>Mindset</span><span class="text-rose">✦</span>
-    <span>Transformation</span><span class="text-rose">✦</span><span>Lifestyle</span><span class="text-rose">✦</span>
-  </div>
-</section>
-
-<!-- COUNTERS -->
-<section class="py-20 reveal">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
-    <div class="text-center">
-      <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="800">0</div>
-      <div class="mt-2 text-sm uppercase tracking-widest text-mocha">Women Transformed</div>
-    </div>
-    <div class="text-center">
-      <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="9">0</div>
-      <div class="mt-2 text-sm uppercase tracking-widest text-mocha">Years Coaching</div>
-    </div>
-    <div class="text-center">
-      <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="98">0</div>
-      <div class="mt-2 text-sm uppercase tracking-widest text-mocha">% Success Rate</div>
-    </div>
-    <div class="text-center">
-      <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="500">0</div>
-      <div class="mt-2 text-sm uppercase tracking-widest text-mocha">5-Star Reviews</div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section id="programs" class="py-24 bg-sand/40">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center max-w-2xl mx-auto reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Online Coaching Programs</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3">Built for women who are <span class="grad-text italic">done waiting</span> for the right time.</h2>
-      <p class="mt-4 text-ink/70">You don't need a perfect routine or a child-free life to decide to start. You just need a plan, a coach, and a system that fits your real life.</p>
-    </div>
-    <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <!-- card -->
-      <div class="card-hover glass rounded-3xl p-8 reveal">
-        <div class="w-12 h-12 rounded-2xl bg-ink text-cream flex items-center justify-center"><i class="fa-solid fa-dumbbell"></i></div>
-        <h3 class="font-display text-2xl mt-5">12-Week Transformation</h3>
-        <p class="mt-3 text-ink/70 text-sm">Custom training, nutrition and accountability — the flagship program women come to me for.</p>
-        <ul class="mt-5 text-sm text-ink/80 space-y-2">
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Personalised training plan</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Flexible nutrition strategy</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Weekly check-ins</li>
-        </ul>
-        <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-      <div class="card-hover glass rounded-3xl p-8 reveal">
-        <div class="w-12 h-12 rounded-2xl bg-rose text-white flex items-center justify-center"><i class="fa-solid fa-user"></i></div>
-        <h3 class="font-display text-2xl mt-5">1:1 Premium Coaching</h3>
-        <p class="mt-3 text-ink/70 text-sm">High-touch private coaching with direct daily access — for women who want the fastest, most personal route.</p>
-        <ul class="mt-5 text-sm text-ink/80 space-y-2">
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Daily WhatsApp support</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Bi-weekly video calls</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Fully bespoke programming</li>
-        </ul>
-        <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-      <div class="card-hover glass rounded-3xl p-8 reveal">
-        <div class="w-12 h-12 rounded-2xl bg-clay text-white flex items-center justify-center"><i class="fa-solid fa-brain"></i></div>
-        <h3 class="font-display text-2xl mt-5">Mindset Coaching</h3>
-        <p class="mt-3 text-ink/70 text-sm">Stop negotiating with yourself. Rebuild discipline, confidence and identity — the work no plan can replace.</p>
-        <ul class="mt-5 text-sm text-ink/80 space-y-2">
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Habit & identity work</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Confidence frameworks</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Weekly mindset audits</li>
-        </ul>
-        <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-      <div class="card-hover glass rounded-3xl p-8 reveal">
-        <div class="w-12 h-12 rounded-2xl bg-mocha text-white flex items-center justify-center"><i class="fa-solid fa-utensils"></i></div>
-        <h3 class="font-display text-2xl mt-5">Fitness & Nutrition Plans</h3>
-        <p class="mt-3 text-ink/70 text-sm">Done-for-you plans built around your goals, schedule, food preferences and training level — no extremes.</p>
-        <ul class="mt-5 text-sm text-ink/80 space-y-2">
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Macro-based meal plan</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Gym or home options</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Lifetime access</li>
-        </ul>
-        <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-      <div class="card-hover glass rounded-3xl p-8 reveal">
-        <div class="w-12 h-12 rounded-2xl bg-ink text-cream flex items-center justify-center"><i class="fa-solid fa-spa"></i></div>
-        <h3 class="font-display text-2xl mt-5">Lifestyle Coaching</h3>
-        <p class="mt-3 text-ink/70 text-sm">For busy women working +10 hours a day. Build a sustainable lifestyle that holds up when life doesn't slow down.</p>
-        <ul class="mt-5 text-sm text-ink/80 space-y-2">
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Energy & sleep protocols</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Stress management</li>
-          <li><i class="fa-solid fa-check text-rose mr-2"></i>Routine architecture</li>
-        </ul>
-        <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-      <div class="card-hover relative rounded-3xl p-8 reveal text-cream overflow-hidden" style="background: linear-gradient(135deg,#1c1410,#7a5a4a);">
-        <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-rose/40 blur-3xl"></div>
-        <span class="text-xs uppercase tracking-[0.3em] text-rose">Most popular</span>
-        <h3 class="font-display text-2xl mt-3">Signature Method</h3>
-        <p class="mt-3 text-cream/80 text-sm">Training + nutrition + mindset + lifestyle — the complete Rita method for women who want it all to finally click.</p>
-        <a href="#book" class="mt-6 inline-flex items-center px-5 py-3 rounded-full bg-cream text-ink hover:bg-rose hover:text-white transition">Book consultation <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COACHING / ABOUT -->
-<section id="coaching" class="py-24">
-  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal grid grid-cols-2 gap-4">
-      <video src="assets/video-1.mp4" muted autoplay loop playsinline class="rounded-3xl shadow-luxe w-full h-72 object-cover"></video>
-      <video src="assets/video-2.mp4" muted autoplay loop playsinline class="rounded-3xl shadow-luxe w-full h-72 object-cover mt-8"></video>
-      <video src="assets/video-3.mp4" muted autoplay loop playsinline class="rounded-3xl shadow-luxe w-full h-72 object-cover -mt-4"></video>
-      <video src="assets/video-4.mp4" muted autoplay loop playsinline class="rounded-3xl shadow-luxe w-full h-72 object-cover mt-4"></video>
-    </div>
-    <div class="reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Meet your coach</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3">Hi, I'm <span class="grad-text italic">Rita</span> — and I coach women into the strongest version of themselves.</h2>
-      <p class="mt-5 text-ink/70">For nearly a decade I've helped women rebuild their bodies, their confidence and their relationship with food and training. My approach is simple: real structure, no extremes, zero shame — and a coach who actually shows up for you.</p>
-      <div class="mt-8 grid grid-cols-2 gap-4">
-        <div class="glass rounded-2xl p-5"><div class="text-rose"><i class="fa-solid fa-trophy"></i></div><div class="font-display text-xl mt-2">Certified</div><div class="text-sm text-ink/60">Personal trainer & nutrition coach</div></div>
-        <div class="glass rounded-2xl p-5"><div class="text-rose"><i class="fa-solid fa-globe"></i></div><div class="font-display text-xl mt-2">Worldwide</div><div class="text-sm text-ink/60">Clients across 20+ countries</div></div>
-        <div class="glass rounded-2xl p-5"><div class="text-rose"><i class="fa-solid fa-heart"></i></div><div class="font-display text-xl mt-2">Women only</div><div class="text-sm text-ink/60">Specialised in female transformation</div></div>
-        <div class="glass rounded-2xl p-5"><div class="text-rose"><i class="fa-solid fa-bolt"></i></div><div class="font-display text-xl mt-2">No fluff</div><div class="text-sm text-ink/60">Honest coaching, real results</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- RESULTS / TRANSFORMATIONS -->
-<section id="results" class="py-24 bg-ink text-cream relative overflow-hidden">
-  <div class="absolute -top-20 -left-20 w-96 h-96 bg-rose/20 blur-3xl rounded-full"></div>
-  <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-clay/20 blur-3xl rounded-full"></div>
-  <div class="max-w-7xl mx-auto px-6 relative">
-    <div class="text-center max-w-2xl mx-auto reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Real Transformations</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3 text-cream">Some of these women are <span class="italic" style="background:linear-gradient(120deg,#d39a92,#c9a089);-webkit-background-clip:text;background-clip:text;color:transparent;">working +10 hours a day.</span></h2>
-      <p class="mt-4 text-cream/70">The difference? They stopped negotiating with themselves and committed to the process.</p>
-    </div>
-
-    <div class="mt-14 grid md:grid-cols-3 gap-6">
-      <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
-        <img src="assets/transform-1.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 1"/>
-        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-rose text-xs uppercase tracking-widest">14 weeks</div>
-          <div class="font-display text-2xl">Sofia — busy mum</div>
-        </figcaption>
-      </figure>
-      <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
-        <img src="assets/transform-2.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 2"/>
-        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-rose text-xs uppercase tracking-widest">12 weeks</div>
-          <div class="font-display text-2xl">Aanya — full-time exec</div>
-        </figcaption>
-      </figure>
-      <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
-        <img src="assets/transform-3.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 3"/>
-        <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
-          <div class="text-rose text-xs uppercase tracking-widest">20 weeks</div>
-          <div class="font-display text-2xl">Hannah — mum of two</div>
-        </figcaption>
-      </figure>
-    </div>
-
-    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-      <div class="glass-dark rounded-2xl p-6 text-center"><div class="font-display text-3xl text-rose">-12kg</div><div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Average fat loss</div></div>
-      <div class="glass-dark rounded-2xl p-6 text-center"><div class="font-display text-3xl text-rose">+5kg</div><div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Lean muscle gain</div></div>
-      <div class="glass-dark rounded-2xl p-6 text-center"><div class="font-display text-3xl text-rose">12wks</div><div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Avg program length</div></div>
-      <div class="glass-dark rounded-2xl p-6 text-center"><div class="font-display text-3xl text-rose">100%</div><div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Custom to you</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM SHOWCASE -->
-<section class="py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
-      <div>
-        <span class="text-xs uppercase tracking-[0.3em] text-rose">@rita_fitnesscoach</span>
-        <h2 class="font-display text-4xl md:text-5xl mt-3">Inside the <span class="grad-text italic">community</span></h2>
-      </div>
-      <a href="https://instagram.com/rita_fitnesscoach" target="_blank" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ink text-cream hover:bg-mocha transition">
-        <i class="fa-brands fa-instagram"></i> Follow on Instagram
+  <!-- NAV -->
+  <header id="nav" class="nav-blur fixed top-0 inset-x-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2">
+        <span class="font-display text-2xl tracking-wide text-mocha">Rita<span class="text-rose">.</span></span>
+        <span class="hidden sm:inline text-[10px] uppercase tracking-[0.3em] text-mocha/70">Fitness Coach</span>
       </a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm text-ink/80">
+        <a href="#programs" class="hover:text-rose">Programs</a>
+        <a href="#coaching" class="hover:text-rose">Coaching</a>
+        <a href="#results" class="hover:text-rose">Results</a>
+        <a href="#testimonials" class="hover:text-rose">Reviews</a>
+        <a href="#faq" class="hover:text-rose">FAQ</a>
+        <a href="#book" class="hover:text-rose">Contact</a>
+      </nav>
+      <a href="https://form.jotform.com/253616429002047"
+        class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-ink text-cream text-sm hover:bg-mocha transition">
+        Book a call <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+      <button id="menuBtn" class="lg:hidden text-ink text-xl"><i class="fa-solid fa-bars"></i></button>
     </div>
-    <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
-      <video src="assets/video-1.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
-      <video src="assets/video-2.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
-      <video src="assets/video-3.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
-      <video src="assets/video-4.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
-      <video src="assets/video-5.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
-      <video src="assets/video-6.mp4" muted autoplay loop playsinline class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+    <div id="mobileMenu" class="hidden lg:hidden glass border-t border-white/40">
+      <div class="px-6 py-4 flex flex-col gap-4 text-ink">
+        <a href="#programs">Programs</a><a href="#coaching">Coaching</a><a href="#results">Results</a>
+        <a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="https://form.jotform.com/253616429002047"
+          class="text-rose font-medium">Book a
+          call →</a>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="py-24 bg-sand/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Client Reviews</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3">Words from women who <span class="grad-text italic">decided to start.</span></h2>
-    </div>
-    <div class="mt-14 relative overflow-hidden reveal">
-      <div id="testiTrack" class="testi-track flex">
-        <!-- slides -->
-        <div class="min-w-full px-2"><div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
-          <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"Rita didn't give me a diet — she gave me a structure that fit my real life. Down 11kg, stronger than I've ever been, and finally not obsessing over food."</p>
-          <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Emma, 34 · London</div>
-        </div></div>
-        <div class="min-w-full px-2"><div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
-          <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"I work 12-hour days and still managed to fully transform in 16 weeks. The mindset coaching is what changed everything for me."</p>
-          <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Priya, 29 · Dubai</div>
-        </div></div>
-        <div class="min-w-full px-2"><div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
-          <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"Two kids, full-time job, no time. Rita built a plan around me — not the other way around. I've never felt this confident in my body."</p>
-          <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Hannah, 38 · Sydney</div>
-        </div></div>
-        <div class="min-w-full px-2"><div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
-          <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-          <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"The accountability is unmatched. Weekly check-ins, real conversations, and a coach who genuinely cares about more than just the scale."</p>
-          <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Laura, 41 · Madrid</div>
-        </div></div>
-      </div>
-      <div class="flex justify-center gap-3 mt-8">
-        <button class="testiBtn w-10 h-10 rounded-full glass hover:bg-white" data-dir="-1"><i class="fa-solid fa-arrow-left"></i></button>
-        <button class="testiBtn w-10 h-10 rounded-full glass hover:bg-white" data-dir="1"><i class="fa-solid fa-arrow-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="py-24">
-  <div class="max-w-4xl mx-auto px-6">
-    <div class="text-center reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Questions</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3">Everything you need to <span class="grad-text italic">know.</span></h2>
-    </div>
-    <div class="mt-12 space-y-4 reveal">
-      <details class="glass rounded-2xl p-6 group">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-xl">Do I need a gym to work with you?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
-        <p class="mt-4 text-ink/70">No. Programs are fully built around your situation — gym, home, hotel, minimal equipment. We design around your real life, not the other way around.</p>
-      </details>
-      <details class="glass rounded-2xl p-6">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-xl">How long until I see results?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
-        <p class="mt-4 text-ink/70">Most clients see clear physical and mindset changes within the first 4 weeks. The full transformation typically lands in the 12–16 week window.</p>
-      </details>
-      <details class="glass rounded-2xl p-6">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-xl">I'm a beginner — is this for me?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
-        <p class="mt-4 text-ink/70">Absolutely. The majority of my clients start as beginners. You don't need to be fit to start — you need to start to get fit.</p>
-      </details>
-      <details class="glass rounded-2xl p-6">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-xl">Is the nutrition plan restrictive?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
-        <p class="mt-4 text-ink/70">Never. No banned foods, no extremes. We build flexible nutrition around your preferences, your culture and your schedule.</p>
-      </details>
-      <details class="glass rounded-2xl p-6">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-xl">How do we communicate?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
-        <p class="mt-4 text-ink/70">Through WhatsApp and a private coaching app, plus video check-ins. You're never coaching alone.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING -->
-<section id="book" class="py-24 bg-cream">
-  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-    <div class="reveal">
-      <span class="text-xs uppercase tracking-[0.3em] text-rose">Book a free consultation</span>
-      <h2 class="font-display text-4xl md:text-5xl mt-3">Let's design your <span class="grad-text italic">12 weeks.</span></h2>
-      <p class="mt-5 text-ink/70 max-w-md">A 20-minute call to understand your goals, your lifestyle and the right program for you. No pressure, just clarity.</p>
-      <div class="mt-8 space-y-4">
-        <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i class="fa-solid fa-check"></i></div><span>Personal goal & lifestyle audit</span></div>
-        <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i class="fa-solid fa-check"></i></div><span>Honest assessment of where you are</span></div>
-        <div class="flex items-center gap-4"><div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i class="fa-solid fa-check"></i></div><span>Custom program recommendation</span></div>
-      </div>
-    </div>
-    <form id="bookForm" class="glass rounded-3xl p-8 shadow-luxe reveal space-y-4">
-      <div>
-        <label class="text-xs uppercase tracking-widest text-mocha">Full name</label>
-        <input required type="text" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose"/>
-      </div>
-      <div class="grid md:grid-cols-2 gap-4">
-        <div>
-          <label class="text-xs uppercase tracking-widest text-mocha">Email</label>
-          <input required type="email" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose"/>
+  <!-- HERO -->
+  <section id="top" class="grad-hero relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden grain">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative">
+      <div class="reveal">
+        <span
+          class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs uppercase tracking-[0.25em] text-mocha">
+          <span class="w-2 h-2 rounded-full bg-rose animate-pulse"></span> Now coaching women worldwide
+        </span>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mt-6">
+          Imagine where <br /> you could be in <span class="grad-text italic">12 weeks.</span>
+        </h1>
+        <p class="mt-6 text-lg text-ink/70 max-w-lg">
+          Premium online coaching for women ready to stop negotiating with themselves — fitness, mindset and lifestyle
+          transformations with structure, support and someone actually guiding you.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="https://form.jotform.com/253616429002047"
+            class="px-7 py-4 rounded-full bg-ink text-cream hover:bg-mocha transition shadow-luxe">
+            Start your transformation <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+          </a>
+          <a href="#programs" class="px-7 py-4 rounded-full glass text-ink hover:bg-white/80 transition">
+            Explore programs
+          </a>
         </div>
-        <div>
-          <label class="text-xs uppercase tracking-widest text-mocha">WhatsApp</label>
-          <input type="tel" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose"/>
+        <div class="mt-10 flex items-center gap-6">
+          <div class="flex -space-x-3">
+            <img src="assets/transform-1.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover" />
+            <img src="assets/transform-2.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover" />
+            <img src="assets/transform-3.jpg" class="w-10 h-10 rounded-full border-2 border-cream object-cover" />
+            <div
+              class="w-10 h-10 rounded-full bg-rose/80 text-white text-xs flex items-center justify-center border-2 border-cream">
+              +800</div>
+          </div>
+          <div class="text-sm">
+            <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> <span
+                class="text-ink font-medium">4.9/5</span></div>
+            <div class="text-ink/60">Loved by 800+ women clients</div>
+          </div>
         </div>
       </div>
-      <div>
-        <label class="text-xs uppercase tracking-widest text-mocha">I'm interested in</label>
-        <select class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose">
-          <option>12-Week Transformation</option>
-          <option>1:1 Premium Coaching</option>
-          <option>Mindset Coaching</option>
-          <option>Lifestyle Coaching</option>
-          <option>Signature Method</option>
-        </select>
+      <div class="reveal relative">
+        <div class="absolute -inset-6 grad-hero blur-2xl opacity-60 -z-10 rounded-[3rem]"></div>
+        <div class="relative rounded-[2.5rem] overflow-hidden shadow-luxe">
+          <img src="assets/rita-hero.jpg" alt="Rita - Fitness Coach" class="w-full h-[560px] object-cover" />
+          <div class="absolute bottom-5 left-5 right-5 glass rounded-2xl p-4 flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-rose/90 flex items-center justify-center text-white"><i
+                class="fa-solid fa-heart"></i></div>
+            <div>
+              <div class="text-xs uppercase tracking-widest text-mocha">Rita — Coach</div>
+              <div class="text-sm text-ink/80">Fitness · Mindset · Lifestyle</div>
+            </div>
+            <a href="https://instagram.com/rita_fitnesscoach" target="_blank"
+              class="ml-auto text-mocha hover:text-rose"><i class="fa-brands fa-instagram text-xl"></i></a>
+          </div>
+        </div>
+        <div class="hidden md:block absolute -left-8 top-10 glass rounded-2xl px-4 py-3 shadow-luxe">
+          <div class="text-2xl font-display grad-text">-12kg</div>
+          <div class="text-[11px] uppercase tracking-widest text-mocha">avg client result</div>
+        </div>
+        <div class="hidden md:block absolute -right-6 bottom-24 glass rounded-2xl px-4 py-3 shadow-luxe">
+          <div class="text-2xl font-display grad-text">12 wks</div>
+          <div class="text-[11px] uppercase tracking-widest text-mocha">to a new you</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TICKER -->
+  <section class="border-y border-mocha/10 bg-cream/60 py-5 marquee-mask overflow-hidden">
+    <div class="ticker flex gap-12 whitespace-nowrap text-mocha/70 font-display text-2xl">
+      <span>Strength</span><span class="text-rose">✦</span><span>Confidence</span><span class="text-rose">✦</span>
+      <span>Discipline</span><span class="text-rose">✦</span><span>Mindset</span><span class="text-rose">✦</span>
+      <span>Transformation</span><span class="text-rose">✦</span><span>Lifestyle</span><span class="text-rose">✦</span>
+      <span>Strength</span><span class="text-rose">✦</span><span>Confidence</span><span class="text-rose">✦</span>
+      <span>Discipline</span><span class="text-rose">✦</span><span>Mindset</span><span class="text-rose">✦</span>
+      <span>Transformation</span><span class="text-rose">✦</span><span>Lifestyle</span><span class="text-rose">✦</span>
+    </div>
+  </section>
+
+  <!-- COUNTERS -->
+  <section class="py-20 reveal">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center">
+        <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="800">0</div>
+        <div class="mt-2 text-sm uppercase tracking-widest text-mocha">Women Transformed</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="9">0</div>
+        <div class="mt-2 text-sm uppercase tracking-widest text-mocha">Years Coaching</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="98">0</div>
+        <div class="mt-2 text-sm uppercase tracking-widest text-mocha">% Success Rate</div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-5xl md:text-6xl grad-text counter" data-target="500">0</div>
+        <div class="mt-2 text-sm uppercase tracking-widest text-mocha">5-Star Reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section id="programs" class="py-24 bg-sand/40">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Online Coaching Programs</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Built for women who are <span class="grad-text italic">done
+            waiting</span> for the right time.</h2>
+        <p class="mt-4 text-ink/70">You don't need a perfect routine or a child-free life to decide to start. You just
+          need a plan, a coach, and a system that fits your real life.</p>
+      </div>
+      <div class="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- card -->
+        <div class="card-hover glass rounded-3xl p-8 reveal">
+          <div class="w-12 h-12 rounded-2xl bg-ink text-cream flex items-center justify-center"><i
+              class="fa-solid fa-dumbbell"></i></div>
+          <h3 class="font-display text-2xl mt-5">12-Week Transformation</h3>
+          <p class="mt-3 text-ink/70 text-sm">Custom training, nutrition and accountability — the flagship program women
+            come to me for.</p>
+          <ul class="mt-5 text-sm text-ink/80 space-y-2">
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Personalised training plan</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Flexible nutrition strategy</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Weekly check-ins</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i
+              class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+        <div class="card-hover glass rounded-3xl p-8 reveal">
+          <div class="w-12 h-12 rounded-2xl bg-rose text-white flex items-center justify-center"><i
+              class="fa-solid fa-user"></i></div>
+          <h3 class="font-display text-2xl mt-5">1:1 Premium Coaching</h3>
+          <p class="mt-3 text-ink/70 text-sm">High-touch private coaching with direct daily access — for women who want
+            the fastest, most personal route.</p>
+          <ul class="mt-5 text-sm text-ink/80 space-y-2">
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Daily WhatsApp support</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Bi-weekly video calls</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Fully bespoke programming</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i
+              class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+        <div class="card-hover glass rounded-3xl p-8 reveal">
+          <div class="w-12 h-12 rounded-2xl bg-clay text-white flex items-center justify-center"><i
+              class="fa-solid fa-brain"></i></div>
+          <h3 class="font-display text-2xl mt-5">Mindset Coaching</h3>
+          <p class="mt-3 text-ink/70 text-sm">Stop negotiating with yourself. Rebuild discipline, confidence and
+            identity — the work no plan can replace.</p>
+          <ul class="mt-5 text-sm text-ink/80 space-y-2">
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Habit & identity work</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Confidence frameworks</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Weekly mindset audits</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i
+              class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+        <div class="card-hover glass rounded-3xl p-8 reveal">
+          <div class="w-12 h-12 rounded-2xl bg-mocha text-white flex items-center justify-center"><i
+              class="fa-solid fa-utensils"></i></div>
+          <h3 class="font-display text-2xl mt-5">Fitness & Nutrition Plans</h3>
+          <p class="mt-3 text-ink/70 text-sm">Done-for-you plans built around your goals, schedule, food preferences and
+            training level — no extremes.</p>
+          <ul class="mt-5 text-sm text-ink/80 space-y-2">
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Macro-based meal plan</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Gym or home options</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Lifetime access</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i
+              class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+        <div class="card-hover glass rounded-3xl p-8 reveal">
+          <div class="w-12 h-12 rounded-2xl bg-ink text-cream flex items-center justify-center"><i
+              class="fa-solid fa-spa"></i></div>
+          <h3 class="font-display text-2xl mt-5">Lifestyle Coaching</h3>
+          <p class="mt-3 text-ink/70 text-sm">For busy women working +10 hours a day. Build a sustainable lifestyle that
+            holds up when life doesn't slow down.</p>
+          <ul class="mt-5 text-sm text-ink/80 space-y-2">
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Energy & sleep protocols</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Stress management</li>
+            <li><i class="fa-solid fa-check text-rose mr-2"></i>Routine architecture</li>
+          </ul>
+          <a href="#book" class="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i
+              class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+        <div class="card-hover relative rounded-3xl p-8 reveal text-cream overflow-hidden"
+          style="background: linear-gradient(135deg,#1c1410,#7a5a4a);">
+          <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-rose/40 blur-3xl"></div>
+          <span class="text-xs uppercase tracking-[0.3em] text-rose">Most popular</span>
+          <h3 class="font-display text-2xl mt-3">Signature Method</h3>
+          <p class="mt-3 text-cream/80 text-sm">Training + nutrition + mindset + lifestyle — the complete Rita method
+            for women who want it all to finally click.</p>
+          <a href="#book"
+            class="mt-6 inline-flex items-center px-5 py-3 rounded-full bg-cream text-ink hover:bg-rose hover:text-white transition">Book
+            consultation <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COACHING / ABOUT -->
+  <section id="coaching" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal grid grid-cols-2 gap-4">
+        <video src="assets/video-1.mp4" muted autoplay loop playsinline
+          class="rounded-3xl shadow-luxe w-full h-72 object-cover"></video>
+        <video src="assets/video-2.mp4" muted autoplay loop playsinline
+          class="rounded-3xl shadow-luxe w-full h-72 object-cover mt-8"></video>
+        <video src="assets/video-3.mp4" muted autoplay loop playsinline
+          class="rounded-3xl shadow-luxe w-full h-72 object-cover -mt-4"></video>
+        <video src="assets/video-4.mp4" muted autoplay loop playsinline
+          class="rounded-3xl shadow-luxe w-full h-72 object-cover mt-4"></video>
+      </div>
+      <div class="reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Meet your coach</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Hi, I'm <span class="grad-text italic">Rita</span> — and I
+          coach women into the strongest version of themselves.</h2>
+        <p class="mt-5 text-ink/70">For nearly a decade I've helped women rebuild their bodies, their confidence and
+          their relationship with food and training. My approach is simple: real structure, no extremes, zero shame —
+          and a coach who actually shows up for you.</p>
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="glass rounded-2xl p-5">
+            <div class="text-rose"><i class="fa-solid fa-trophy"></i></div>
+            <div class="font-display text-xl mt-2">Certified</div>
+            <div class="text-sm text-ink/60">Personal trainer & nutrition coach</div>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-rose"><i class="fa-solid fa-globe"></i></div>
+            <div class="font-display text-xl mt-2">Worldwide</div>
+            <div class="text-sm text-ink/60">Clients across 20+ countries</div>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-rose"><i class="fa-solid fa-heart"></i></div>
+            <div class="font-display text-xl mt-2">Women only</div>
+            <div class="text-sm text-ink/60">Specialised in female transformation</div>
+          </div>
+          <div class="glass rounded-2xl p-5">
+            <div class="text-rose"><i class="fa-solid fa-bolt"></i></div>
+            <div class="font-display text-xl mt-2">No fluff</div>
+            <div class="text-sm text-ink/60">Honest coaching, real results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / TRANSFORMATIONS -->
+  <section id="results" class="py-24 bg-ink text-cream relative overflow-hidden">
+    <div class="absolute -top-20 -left-20 w-96 h-96 bg-rose/20 blur-3xl rounded-full"></div>
+    <div class="absolute -bottom-20 -right-20 w-96 h-96 bg-clay/20 blur-3xl rounded-full"></div>
+    <div class="max-w-7xl mx-auto px-6 relative">
+      <div class="text-center max-w-2xl mx-auto reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Real Transformations</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3 text-cream">Some of these women are <span class="italic"
+            style="background:linear-gradient(120deg,#d39a92,#c9a089);-webkit-background-clip:text;background-clip:text;color:transparent;">working
+            +10 hours a day.</span></h2>
+        <p class="mt-4 text-cream/70">The difference? They stopped negotiating with themselves and committed to the
+          process.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-3 gap-6">
+        <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
+          <img src="assets/transform-1.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 1" />
+          <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
+            <div class="text-rose text-xs uppercase tracking-widest">14 weeks</div>
+            <div class="font-display text-2xl">Sofia — busy mum</div>
+          </figcaption>
+        </figure>
+        <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
+          <img src="assets/transform-2.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 2" />
+          <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
+            <div class="text-rose text-xs uppercase tracking-widest">12 weeks</div>
+            <div class="font-display text-2xl">Aanya — full-time exec</div>
+          </figcaption>
+        </figure>
+        <figure class="card-hover relative rounded-3xl overflow-hidden shadow-luxe reveal">
+          <img src="assets/transform-3.jpg" class="w-full h-[480px] object-cover" alt="Client transformation 3" />
+          <figcaption class="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-black/80 to-transparent">
+            <div class="text-rose text-xs uppercase tracking-widest">20 weeks</div>
+            <div class="font-display text-2xl">Hannah — mum of two</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+        <div class="glass-dark rounded-2xl p-6 text-center">
+          <div class="font-display text-3xl text-rose">-12kg</div>
+          <div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Average fat loss</div>
+        </div>
+        <div class="glass-dark rounded-2xl p-6 text-center">
+          <div class="font-display text-3xl text-rose">+5kg</div>
+          <div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Lean muscle gain</div>
+        </div>
+        <div class="glass-dark rounded-2xl p-6 text-center">
+          <div class="font-display text-3xl text-rose">12wks</div>
+          <div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Avg program length</div>
+        </div>
+        <div class="glass-dark rounded-2xl p-6 text-center">
+          <div class="font-display text-3xl text-rose">100%</div>
+          <div class="text-xs uppercase tracking-widest text-cream/60 mt-1">Custom to you</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM SHOWCASE -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+        <div>
+          <span class="text-xs uppercase tracking-[0.3em] text-rose">@rita_fitnesscoach</span>
+          <h2 class="font-display text-4xl md:text-5xl mt-3">Inside the <span class="grad-text italic">community</span>
+          </h2>
+        </div>
+        <a href="https://instagram.com/rita_fitnesscoach" target="_blank"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-ink text-cream hover:bg-mocha transition">
+          <i class="fa-brands fa-instagram"></i> Follow on Instagram
+        </a>
+      </div>
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
+        <video src="assets/video-1.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+        <video src="assets/video-2.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+        <video src="assets/video-3.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+        <video src="assets/video-4.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+        <video src="assets/video-5.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+        <video src="assets/video-6.mp4" muted autoplay loop playsinline
+          class="rounded-2xl aspect-[9/16] w-full shadow-luxe"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-24 bg-sand/40">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Client Reviews</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Words from women who <span class="grad-text italic">decided
+            to start.</span></h2>
+      </div>
+      <div class="mt-14 relative overflow-hidden reveal">
+        <div id="testiTrack" class="testi-track flex">
+          <!-- slides -->
+          <div class="min-w-full px-2">
+            <div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
+              <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"Rita didn't give me a diet — she gave me a
+                structure that fit my real life. Down 11kg, stronger than I've ever been, and finally not obsessing over
+                food."</p>
+              <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Emma, 34 · London</div>
+            </div>
+          </div>
+          <div class="min-w-full px-2">
+            <div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
+              <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"I work 12-hour days and still managed to
+                fully transform in 16 weeks. The mindset coaching is what changed everything for me."</p>
+              <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Priya, 29 · Dubai</div>
+            </div>
+          </div>
+          <div class="min-w-full px-2">
+            <div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
+              <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"Two kids, full-time job, no time. Rita
+                built a plan around me — not the other way around. I've never felt this confident in my body."</p>
+              <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Hannah, 38 · Sydney</div>
+            </div>
+          </div>
+          <div class="min-w-full px-2">
+            <div class="glass rounded-3xl p-10 shadow-luxe text-center max-w-3xl mx-auto">
+              <div class="text-amber-500"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="font-display text-2xl md:text-3xl mt-5 leading-snug">"The accountability is unmatched. Weekly
+                check-ins, real conversations, and a coach who genuinely cares about more than just the scale."</p>
+              <div class="mt-6 text-sm uppercase tracking-widest text-mocha">— Laura, 41 · Madrid</div>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center gap-3 mt-8">
+          <button class="testiBtn w-10 h-10 rounded-full glass hover:bg-white" data-dir="-1"><i
+              class="fa-solid fa-arrow-left"></i></button>
+          <button class="testiBtn w-10 h-10 rounded-full glass hover:bg-white" data-dir="1"><i
+              class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Questions</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Everything you need to <span
+            class="grad-text italic">know.</span></h2>
+      </div>
+      <div class="mt-12 space-y-4 reveal">
+        <details class="glass rounded-2xl p-6 group">
+          <summary class="flex justify-between items-center cursor-pointer font-display text-xl">Do I need a gym to work
+            with you?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-4 text-ink/70">No. Programs are fully built around your situation — gym, home, hotel, minimal
+            equipment. We design around your real life, not the other way around.</p>
+        </details>
+        <details class="glass rounded-2xl p-6">
+          <summary class="flex justify-between items-center cursor-pointer font-display text-xl">How long until I see
+            results?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-4 text-ink/70">Most clients see clear physical and mindset changes within the first 4 weeks. The
+            full transformation typically lands in the 12–16 week window.</p>
+        </details>
+        <details class="glass rounded-2xl p-6">
+          <summary class="flex justify-between items-center cursor-pointer font-display text-xl">I'm a beginner — is
+            this for me?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-4 text-ink/70">Absolutely. The majority of my clients start as beginners. You don't need to be
+            fit to start — you need to start to get fit.</p>
+        </details>
+        <details class="glass rounded-2xl p-6">
+          <summary class="flex justify-between items-center cursor-pointer font-display text-xl">Is the nutrition plan
+            restrictive?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-4 text-ink/70">Never. No banned foods, no extremes. We build flexible nutrition around your
+            preferences, your culture and your schedule.</p>
+        </details>
+        <details class="glass rounded-2xl p-6">
+          <summary class="flex justify-between items-center cursor-pointer font-display text-xl">How do we
+            communicate?<span class="chev text-rose"><i class="fa-solid fa-chevron-down"></i></span></summary>
+          <p class="mt-4 text-ink/70">Through WhatsApp and a private coaching app, plus video check-ins. You're never
+            coaching alone.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" class="py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="reveal">
+        <span class="text-xs uppercase tracking-[0.3em] text-rose">Book a free consultation</span>
+        <h2 class="font-display text-4xl md:text-5xl mt-3">Let's design your <span class="grad-text italic">12
+            weeks.</span></h2>
+        <p class="mt-5 text-ink/70 max-w-md">A 20-minute call to understand your goals, your lifestyle and the right
+          program for you. No pressure, just clarity.</p>
+        <div class="mt-8 space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i
+                class="fa-solid fa-check"></i></div><span>Personal goal & lifestyle audit</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i
+                class="fa-solid fa-check"></i></div><span>Honest assessment of where you are</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i
+                class="fa-solid fa-check"></i></div><span>Custom program recommendation</span>
+          </div>
+        </div>
+      </div>
+      <form id="bookForm" class="glass rounded-3xl p-8 shadow-luxe reveal space-y-4">
+        <div>
+          <label class="text-xs uppercase tracking-widest text-mocha">Full name</label>
+          <input required type="text"
+            class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose" />
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-xs uppercase tracking-widest text-mocha">Email</label>
+            <input required type="email"
+              class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose" />
+          </div>
+          <div>
+            <label class="text-xs uppercase tracking-widest text-mocha">WhatsApp</label>
+            <input type="tel"
+              class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose" />
+          </div>
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest text-mocha">I'm interested in</label>
+          <select
+            class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose">
+            <option>12-Week Transformation</option>
+            <option>1:1 Premium Coaching</option>
+            <option>Mindset Coaching</option>
+            <option>Lifestyle Coaching</option>
+            <option>Signature Method</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest text-mocha">Tell me your goal</label>
+          <textarea rows="3"
+            class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose"></textarea>
+        </div>
+        <button class="w-full px-6 py-4 rounded-xl bg-ink text-cream hover:bg-mocha transition">Request my
+          consultation</button>
+        <p id="formMsg" class="hidden text-center text-sm text-rose">Thank you — I'll be in touch within 24 hours ✦</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink text-cream pt-20 pb-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <div class="md:col-span-2">
+        <div class="font-display text-3xl">Rita<span class="text-rose">.</span></div>
+        <p class="mt-4 text-cream/70 max-w-sm">Online fitness, mindset and women's transformation coaching. Stop
+          negotiating with yourself — start the version of you that you keep imagining.</p>
+        <div class="mt-6 flex gap-3">
+          <a href="https://instagram.com/rita_fitnesscoach" target="_blank"
+            class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i
+              class="fa-brands fa-instagram"></i></a>
+          <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank"
+            class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i
+              class="fa-solid fa-link"></i></a>
+          <a href="https://wa.me/000" target="_blank"
+            class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i
+              class="fa-brands fa-whatsapp"></i></a>
+          <a href="https://tiktok.com" target="_blank"
+            class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i
+              class="fa-brands fa-tiktok"></i></a>
+        </div>
       </div>
       <div>
-        <label class="text-xs uppercase tracking-widest text-mocha">Tell me your goal</label>
-        <textarea rows="3" class="mt-2 w-full px-4 py-3 rounded-xl bg-white/70 border border-mocha/10 focus:outline-none focus:border-rose"></textarea>
+        <div class="text-xs uppercase tracking-[0.3em] text-rose">Coaching</div>
+        <ul class="mt-4 space-y-2 text-cream/80">
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#coaching">1:1 Coaching</a></li>
+          <li><a href="#results">Transformations</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+        </ul>
       </div>
-      <button class="w-full px-6 py-4 rounded-xl bg-ink text-cream hover:bg-mocha transition">Request my consultation</button>
-      <p id="formMsg" class="hidden text-center text-sm text-rose">Thank you — I'll be in touch within 24 hours ✦</p>
-    </form>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-ink text-cream pt-20 pb-10">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
-    <div class="md:col-span-2">
-      <div class="font-display text-3xl">Rita<span class="text-rose">.</span></div>
-      <p class="mt-4 text-cream/70 max-w-sm">Online fitness, mindset and women's transformation coaching. Stop negotiating with yourself — start the version of you that you keep imagining.</p>
-      <div class="mt-6 flex gap-3">
-        <a href="https://instagram.com/rita_fitnesscoach" target="_blank" class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank" class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i class="fa-solid fa-link"></i></a>
-        <a href="https://wa.me/000" target="_blank" class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://tiktok.com" target="_blank" class="w-11 h-11 rounded-full glass-dark flex items-center justify-center hover:bg-rose"><i class="fa-brands fa-tiktok"></i></a>
+      <div>
+        <div class="text-xs uppercase tracking-[0.3em] text-rose">Contact</div>
+        <ul class="mt-4 space-y-2 text-cream/80">
+          <li><a href="#book">Book a call</a></li>
+          <li><a href="https://instagram.com/rita_fitnesscoach" target="_blank">DM 'READY'</a></li>
+          <li><a href="https://linktr.ee/rita_fitnesscoach8" target="_blank">All links</a></li>
+        </ul>
       </div>
     </div>
-    <div>
-      <div class="text-xs uppercase tracking-[0.3em] text-rose">Coaching</div>
-      <ul class="mt-4 space-y-2 text-cream/80">
-        <li><a href="#programs">Programs</a></li>
-        <li><a href="#coaching">1:1 Coaching</a></li>
-        <li><a href="#results">Transformations</a></li>
-        <li><a href="#testimonials">Reviews</a></li>
-      </ul>
+    <div
+      class="max-w-7xl mx-auto px-6 mt-14 pt-6 border-t border-cream/10 flex flex-wrap justify-between gap-4 text-xs text-cream/60">
+      <div>© 2026 Rita Fitness Coach. All rights reserved.</div>
+      <div>Designed with intention ✦ Built for women who decide to start.</div>
     </div>
-    <div>
-      <div class="text-xs uppercase tracking-[0.3em] text-rose">Contact</div>
-      <ul class="mt-4 space-y-2 text-cream/80">
-        <li><a href="#book">Book a call</a></li>
-        <li><a href="https://instagram.com/rita_fitnesscoach" target="_blank">DM 'READY'</a></li>
-        <li><a href="https://linktr.ee/rita_fitnesscoach8" target="_blank">All links</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="max-w-7xl mx-auto px-6 mt-14 pt-6 border-t border-cream/10 flex flex-wrap justify-between gap-4 text-xs text-cream/60">
-    <div>© 2026 Rita Fitness Coach. All rights reserved.</div>
-    <div>Designed with intention ✦ Built for women who decide to start.</div>
-  </div>
-</footer>
+  </footer>
 
-<!-- FLOATING BUTTONS -->
-<a href="https://wa.me/000" target="_blank" class="float-btn fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-luxe">
-  <i class="fa-brands fa-whatsapp text-2xl"></i>
-</a>
-<a href="https://instagram.com/rita_fitnesscoach" target="_blank" class="float-btn fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-luxe" style="background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);">
-  <i class="fa-brands fa-instagram text-2xl"></i>
-</a>
+  <!-- FLOATING BUTTONS -->
+  <a href="https://wa.me/000" target="_blank"
+    class="float-btn fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-luxe">
+    <i class="fa-brands fa-whatsapp text-2xl"></i>
+  </a>
+  <a href="https://instagram.com/rita_fitnesscoach" target="_blank"
+    class="float-btn fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full text-white flex items-center justify-center shadow-luxe"
+    style="background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af);">
+    <i class="fa-brands fa-instagram text-2xl"></i>
+  </a>
 
-<script>
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 30);
-});
-// Mobile menu
-document.getElementById('menuBtn').addEventListener('click', () => {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-});
-// Reveal on scroll
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-}, { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-// Counters
-const cIO = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    const el = e.target; const target = +el.dataset.target; let cur = 0;
-    const step = Math.max(1, Math.round(target / 60));
-    const tick = () => { cur += step; if (cur >= target) { el.textContent = target + (target>=98?'':'+'); } else { el.textContent = cur; requestAnimationFrame(tick); } };
-    tick(); cIO.unobserve(el);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.counter').forEach(el => cIO.observe(el));
-// Testimonials
-const track = document.getElementById('testiTrack');
-const slides = track.children.length;
-let idx = 0;
-function move(){ track.style.transform = `translateX(-${idx*100}%)`; }
-document.querySelectorAll('.testiBtn').forEach(b => b.addEventListener('click', () => {
-  idx = (idx + +b.dataset.dir + slides) % slides; move();
-}));
-setInterval(() => { idx = (idx + 1) % slides; move(); }, 6000);
-// Form
-document.getElementById('bookForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  document.getElementById('formMsg').classList.remove('hidden');
-  e.target.reset();
-});
-</script>
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    });
+    // Mobile menu
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    });
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    // Counters
+    const cIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target; const target = +el.dataset.target; let cur = 0;
+        const step = Math.max(1, Math.round(target / 60));
+        const tick = () => { cur += step; if (cur >= target) { el.textContent = target + (target >= 98 ? '' : '+'); } else { el.textContent = cur; requestAnimationFrame(tick); } };
+        tick(); cIO.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => cIO.observe(el));
+    // Testimonials
+    const track = document.getElementById('testiTrack');
+    const slides = track.children.length;
+    let idx = 0;
+    function move() { track.style.transform = `translateX(-${idx * 100}%)`; }
+    document.querySelectorAll('.testiBtn').forEach(b => b.addEventListener('click', () => {
+      idx = (idx + +b.dataset.dir + slides) % slides; move();
+    }));
+    setInterval(() => { idx = (idx + 1) % slides; move(); }, 6000);
+    // Form
+    document.getElementById('bookForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('formMsg').classList.remove('hidden');
+      e.target.reset();
+    });
+  </script>
 </body>
+
 </html>
