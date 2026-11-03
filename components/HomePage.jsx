@@ -337,6 +337,7 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      <div id="testiDots" className="testi-dots mt-6 flex items-center justify-center" role="group" aria-label="Choose a client review" />
     </div>
   </section>
   <section id="faq" className="py-16 md:py-24">

@@ -186,34 +186,106 @@ export function initHomeInteractions() {
   }
 
   const track = document.getElementById('testiTrack');
+  const dotsContainer = document.getElementById('testiDots');
   const buttons = [...document.querySelectorAll('.testiBtn')];
-  const slideCount = track?.children.length || 0;
-  let index = 0;
+  const slides = track ? [...track.children] : [];
+  const slideCount = slides.length;
+  const clones = [];
+  let physicalIndex = slideCount;
+  let logicalIndex = 0;
+  let animating = false;
+  let timer = null;
   const visibleSlides = () => {
     if (matchMedia('(min-width: 64rem)').matches) return 3;
     if (matchMedia('(min-width: 40rem)').matches) return 2;
     return 1;
   };
-  const move = () => {
-    if (!track || !slideCount) return;
-    index = Math.min(index, Math.max(0, slideCount - visibleSlides()));
-    track.style.transform = `translateX(-${index * (100 / visibleSlides())}%)`;
+  const positionTrack = () => {
+    track.style.transform = `translateX(-${physicalIndex * (100 / visibleSlides())}%)`;
+  };
+  const jumpToRealSlide = () => {
+    physicalIndex = slideCount + logicalIndex;
+    track.style.transition = 'none';
+    positionTrack();
+    void track.offsetWidth;
+    track.style.transition = '';
+  };
+  const dots = slides.map((_, slideIndex) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'testi-dot';
+    dot.dataset.reviewIndex = String(slideIndex);
+    dot.setAttribute('aria-label', `Show review ${slideIndex + 1} of ${slideCount}`);
+    return dot;
+  });
+  const updateDots = () => {
+    dots.forEach((dot, dotIndex) => {
+      dot.setAttribute('aria-current', dotIndex === logicalIndex ? 'true' : 'false');
+    });
+  };
+  const moveBy = (amount) => {
+    if (!track || slideCount < 2 || animating || amount === 0) return;
+    logicalIndex = (logicalIndex + amount + slideCount) % slideCount;
+    updateDots();
+    if (reducedMotion.matches) {
+      jumpToRealSlide();
+      return;
+    }
+    animating = true;
+    physicalIndex += amount;
+    positionTrack();
+  };
+  const restartTimer = () => {
+    if (timer) clearInterval(timer);
+    timer = slideCount > 1 && !reducedMotion.matches
+      ? setInterval(() => moveBy(1), 6000)
+      : null;
   };
   const onButtonClick = (event) => {
-    const positions = slideCount - visibleSlides() + 1;
-    if (positions <= 0) return;
-    index = (index + Number(event.currentTarget.dataset.dir) + positions) % positions;
-    move();
+    moveBy(Number(event.currentTarget.dataset.dir));
+    restartTimer();
   };
-  buttons.forEach(button => button.addEventListener('click', onButtonClick));
-  window.addEventListener('resize', move);
-  const timer = slideCount ? setInterval(() => {
-    index = (index + 1) % (slideCount - visibleSlides() + 1);
-    move();
-  }, 6000) : null;
+  const onDotClick = (event) => {
+    const dot = event.target.closest('button[data-review-index]');
+    if (!dot || !dotsContainer.contains(dot)) return;
+    const target = Number(dot.dataset.reviewIndex);
+    const forward = (target - logicalIndex + slideCount) % slideCount;
+    const backward = (logicalIndex - target + slideCount) % slideCount;
+    moveBy(forward <= backward ? forward : -backward);
+    restartTimer();
+  };
+  const onTransitionEnd = (event) => {
+    if (event.target !== track || event.propertyName !== 'transform') return;
+    if (physicalIndex < slideCount || physicalIndex >= slideCount * 2) jumpToRealSlide();
+    animating = false;
+  };
+  const onResize = () => {
+    if (!track || !slideCount) return;
+    animating = false;
+    jumpToRealSlide();
+  };
+  if (track && slideCount > 1) {
+    const cloneSlide = (slide) => {
+      const clone = slide.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.inert = true;
+      clones.push(clone);
+      return clone;
+    };
+    track.prepend(...slides.map(cloneSlide));
+    track.append(...slides.map(cloneSlide));
+    jumpToRealSlide();
+    updateDots();
+    dotsContainer?.replaceChildren(...dots);
+    buttons.forEach(button => button.addEventListener('click', onButtonClick));
+    dotsContainer?.addEventListener('click', onDotClick);
+    track.addEventListener('transitionend', onTransitionEnd);
+    window.addEventListener('resize', onResize);
+    restartTimer();
+  }
 
   return () => {
-    window.removeEventListener('resize', move);
+    window.removeEventListener('resize', onResize);
     revealObserver.disconnect();
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
@@ -232,6 +304,14 @@ export function initHomeInteractions() {
     if (removeGalleryTouch) removeGalleryTouch();
     galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));
     buttons.forEach(button => button.removeEventListener('click', onButtonClick));
+    dotsContainer?.removeEventListener('click', onDotClick);
+    dotsContainer?.replaceChildren();
+    track?.removeEventListener('transitionend', onTransitionEnd);
+    clones.forEach(clone => clone.remove());
+    if (track) {
+      track.style.transform = '';
+      track.style.transition = '';
+    }
     if (timer) clearInterval(timer);
   };
 }
