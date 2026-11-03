@@ -34,13 +34,7 @@ export function initHomeInteractions() {
   document.querySelectorAll('.counter').forEach(element => counterObserver.observe(element));
 
   const communityVideoCards = [...document.querySelectorAll('.community-video-card')];
-  const communityVideoThumbnails = [...document.querySelectorAll('.community-video-poster')];
-  communityVideoThumbnails.forEach(video => {
-    video.addEventListener('loadeddata', () => {
-      video.currentTime = 0;
-      video.pause();
-    }, { once: true });
-  });
+  const communityVideos = communityVideoCards.map(card => card.querySelector('video')).filter(Boolean);
   const onCommunityVideoClick = event => {
     const card = event.currentTarget;
     const video = card.querySelector('.community-video-poster');
@@ -147,7 +141,7 @@ export function initHomeInteractions() {
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
     communityVideoCards.forEach(card => card.removeEventListener('click', onCommunityVideoClick));
-    communityVideoThumbnails.forEach(video => video.pause());
+    communityVideos.forEach(video => video.pause());
     if (galleryTimer) clearInterval(galleryTimer);
     if (removeGalleryTouch) removeGalleryTouch();
     galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));

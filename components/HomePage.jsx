@@ -267,15 +267,15 @@ export default function HomePage() {
       </div>
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
         {[
-          ['/assets/video-1.mp4', '/assets/rita-coach-studio.jpg'],
-          ['/assets/video-2.mp4', '/assets/rita-coach-portrait.jpg'],
-          ['/assets/video-3.mp4', '/assets/rita-coach-strength.jpg'],
-          ['/assets/video-4.mp4', '/assets/rita-training.jpg'],
-          ['/assets/video-5.mp4', '/assets/transform-1.jpg'],
-          ['/assets/video-6.mp4', '/assets/transform-3.jpg']
-        ].map(([video], index) => (
+          ['/assets/video-1.mp4', '/assets/video-1-poster.jpg'],
+          ['/assets/video-2.mp4', '/assets/video-2-poster.jpg'],
+          ['/assets/video-3.mp4', '/assets/video-3-poster.jpg'],
+          ['/assets/video-4.mp4', '/assets/video-4-poster.jpg'],
+          ['/assets/video-5.mp4', '/assets/video-5-poster.jpg'],
+          ['/assets/video-6.mp4', '/assets/video-6-poster.jpg']
+        ].map(([video, poster], index) => (
           <div className="community-video-card" data-video-src={video} key={video}>
-            <video src={video} muted playsInline preload="auto" aria-label={`Community video ${index + 1}`} className="community-video-poster" />
+            <video src={video} poster={poster} muted playsInline preload="none" aria-label={`Community video ${index + 1}`} className="community-video-poster" />
             <button type="button" className="community-video-play" aria-label={`Play community video ${index + 1}`}>
               <i className="fa-solid fa-play" aria-hidden="true" />
             </button>
