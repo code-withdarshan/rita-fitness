@@ -41,6 +41,8 @@ export function initHomeInteractions() {
     const card = video.closest('.community-video-card');
     if (!card?.classList.contains('is-playing')) return;
     card.classList.remove('is-playing');
+    card.classList.remove('is-mobile-expanded');
+    document.body.classList.remove('video-open');
     playedVideos.delete(video);
     fullscreenVideos.delete(video);
     if (document.fullscreenElement === video) {
@@ -72,6 +74,11 @@ export function initHomeInteractions() {
   };
   const onCommunityVideoClick = event => {
     const card = event.currentTarget;
+    if (event.target.closest('.community-video-close')) {
+      resetCommunityVideo(card.querySelector('video'));
+      card.querySelector('.community-video-play')?.focus();
+      return;
+    }
     const video = card.querySelector('.community-video-poster');
     if (!video || video.controls) return;
     communityVideos.filter(player => player !== video).forEach(resetCommunityVideo);
@@ -81,14 +88,21 @@ export function initHomeInteractions() {
     video.muted = false;
     const isMobileView = matchMedia('(max-width: 47.9375rem)').matches;
     if (isMobileView) {
-      // iPhone Safari opens its native fullscreen player when inline playback is disabled.
-      video.playsInline = false;
-      video.removeAttribute('playsinline');
+      card.classList.add('is-mobile-expanded');
+      document.body.classList.add('video-open');
+      video.playsInline = true;
+      video.setAttribute('playsinline', '');
     }
-    if (isMobileView && document.fullscreenEnabled && video.requestFullscreen) {
+    if (isMobileView && typeof video.webkitEnterFullscreen === 'function') {
+      try {
+        video.webkitEnterFullscreen();
+      } catch {
+        // The screen-filling card remains available when native iPhone fullscreen is unavailable.
+      }
+    } else if (isMobileView && document.fullscreenEnabled && video.requestFullscreen) {
       try {
         video.requestFullscreen().catch(() => {
-          // Keep playback available if the browser denies fullscreen.
+          // The screen-filling card remains available if the browser denies fullscreen.
         });
       } catch {
         // Keep playback available if fullscreen is unsupported in this context.
@@ -97,7 +111,15 @@ export function initHomeInteractions() {
     const playback = video.play();
     playback.catch(() => resetCommunityVideo(video));
   };
+  const onCommunityVideoKeyDown = event => {
+    if (event.key !== 'Escape') return;
+    const expandedCard = document.querySelector('.community-video-card.is-mobile-expanded');
+    if (!expandedCard) return;
+    resetCommunityVideo(expandedCard.querySelector('video'));
+    expandedCard.querySelector('.community-video-play')?.focus();
+  };
   communityVideoCards.forEach(card => card.addEventListener('click', onCommunityVideoClick));
+  document.addEventListener('keydown', onCommunityVideoKeyDown);
   communityVideos.forEach(video => {
     video.addEventListener('playing', onCommunityPlaying);
     video.addEventListener('pause', onCommunityPause);
@@ -196,6 +218,7 @@ export function initHomeInteractions() {
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
     communityVideoCards.forEach(card => card.removeEventListener('click', onCommunityVideoClick));
+    document.removeEventListener('keydown', onCommunityVideoKeyDown);
     communityVideos.forEach(video => {
       video.removeEventListener('playing', onCommunityPlaying);
       video.removeEventListener('pause', onCommunityPause);
@@ -204,6 +227,7 @@ export function initHomeInteractions() {
     });
     document.removeEventListener('fullscreenchange', onFullscreenChange);
     communityVideos.forEach(video => video.pause());
+    document.body.classList.remove('video-open');
     if (galleryTimer) clearInterval(galleryTimer);
     if (removeGalleryTouch) removeGalleryTouch();
     galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));

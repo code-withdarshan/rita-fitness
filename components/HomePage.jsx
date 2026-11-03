@@ -279,6 +279,9 @@ export default function HomePage() {
             <button type="button" className="community-video-play" aria-label={`Play community video ${index + 1}`}>
               <i className="fa-solid fa-play" aria-hidden="true" />
             </button>
+            <button type="button" className="community-video-close" aria-label={`Close community video ${index + 1}`}>
+              <i className="fa-solid fa-xmark" aria-hidden="true" />
+            </button>
           </div>
         ))}
       </div>
