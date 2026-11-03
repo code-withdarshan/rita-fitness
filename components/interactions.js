@@ -44,8 +44,25 @@ export function initHomeInteractions() {
     });
     video.className = 'community-video-player';
     video.controls = true;
+    video.muted = false;
     card.querySelector('.community-video-play')?.remove();
-    video.play().catch(() => {
+    const isMobileView = matchMedia('(max-width: 47.9375rem)').matches;
+    if (isMobileView) {
+      // iPhone Safari opens its native fullscreen player when inline playback is disabled.
+      video.playsInline = false;
+      video.removeAttribute('playsinline');
+    }
+    if (isMobileView && document.fullscreenEnabled && video.requestFullscreen) {
+      try {
+        video.requestFullscreen().catch(() => {
+          // Keep playback available if the browser denies fullscreen.
+        });
+      } catch {
+        // Keep playback available if fullscreen is unsupported in this context.
+      }
+    }
+    const playback = video.play();
+    playback.catch(() => {
       video.controls = true;
     });
   };

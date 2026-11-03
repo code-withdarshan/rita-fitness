@@ -809,6 +809,14 @@
       object-fit: cover;
     }
 
+    .community-video-player:fullscreen {
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      object-fit: contain;
+      background: #000;
+    }
+
     .community-video-poster {
       filter: saturate(.9);
       transition: transform .35s ease, filter .35s ease;
