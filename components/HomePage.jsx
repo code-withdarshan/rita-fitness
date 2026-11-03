@@ -74,10 +74,10 @@ export default function HomePage() {
   </section>
   <section id="programs" className="py-16 md:py-24 section-soft">
     <div className="max-w-[90rem] mx-auto px-6">
-      <div className="text-center max-w-2xl mx-auto reveal">
+      <div className="programs-heading text-center max-w-3xl mx-auto reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Online Coaching Programs</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Built for women who are <span className="heading-highlight grad-text italic">done
-            waiting</span> for the right time.</h2>
+        <h2 className="programs-title font-display text-4xl md:text-5xl mt-3">Built for women who are<span className="desktop-title-break"><br /></span>{' '}
+          <span className="heading-highlight grad-text italic">done waiting</span> for the right time.</h2>
         <p className="mt-4 text-ink/70">You don't need a perfect routine or a child-free life to decide to start. You just
           need a plan, a coach, and a system that fits your real life.</p>
       </div>

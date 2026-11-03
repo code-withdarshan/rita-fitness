@@ -122,6 +122,26 @@
       padding-block: .12em;
     }
 
+    .programs-title .heading-highlight {
+      display: inline;
+      line-height: inherit;
+      padding-block: 0;
+    }
+
+    .desktop-title-break {
+      display: none;
+    }
+
+    @media (min-width: 40rem) {
+      .programs-title {
+        max-width: 48rem;
+      }
+
+      .programs-title .desktop-title-break {
+        display: inline;
+      }
+    }
+
     .grad-text {
       background: linear-gradient(120deg, #b4557c 0%, #bf6688 50%, #c57291 100%);
       -webkit-background-clip: text;
