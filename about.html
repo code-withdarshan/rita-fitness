@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet Rita Silva, fitness coach. Discover her journey from dance in Brazil to strength training, bodybuilding, powerlifting, and coaching in Australia." />
+  <meta property="og:title" content="About Rita Silva | Fitness Coach" />
+  <meta property="og:description" content="Strength. Mindset. Transformation. Meet Rita Silva and learn the story behind her coaching." />
+  <meta property="og:image" content="assets/rita-coach-portrait.jpg" />
+  <title>About Rita Silva | Fitness Coach</title>
+  <link rel="icon" href="assets/rita-banner-portrait.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --ink: #000;
+      --pink: #e8b6c0;
+      --rose: #b4557c;
+      --soft: #fbf8f7;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, sans-serif; color: var(--ink); background: #fff; }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; width: 100%; }
+    .container { width: min(100% - 3rem, 90rem); margin-inline: auto; }
+    .eyebrow { display: block; color: #954267; font-size: .75rem; font-weight: 700; letter-spacing: .22em; line-height: 1.5; text-transform: uppercase; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 3rem; padding: .85rem 1.5rem; border-radius: .375rem; background: #000; color: #fff; font-size: .8125rem; font-weight: 700; letter-spacing: .05em; text-align: center; text-transform: uppercase; transition: background .2s, color .2s; }
+    .button:hover, .button:focus-visible { background: var(--pink); color: #000; }
+    :focus-visible { outline: .15rem solid var(--rose); outline-offset: .2rem; }
+
+    .site-header { position: fixed; inset: 0 0 auto; z-index: 50; height: 5rem; background: rgba(255,255,255,.97); border-bottom: .0625rem solid rgba(0,0,0,.1); }
+    .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { display: inline-flex; align-items: center; gap: .65rem; flex: none; }
+    .brand-name { font-size: 1.5rem; letter-spacing: .02em; }
+    .brand-name span { color: var(--pink); }
+    .brand-caption { font-size: .625rem; letter-spacing: .3em; text-transform: uppercase; color: #555; }
+    .desktop-nav { display: flex; align-items: center; gap: 1.6rem; font-size: .875rem; }
+    .desktop-nav a:hover, .desktop-nav a[aria-current="page"] { color: var(--rose); }
+    .header-cta { font-size: .8125rem; text-transform: none; letter-spacing: 0; min-height: 2.75rem; padding: .65rem 1.15rem; }
+    .menu-button { display: none; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; background: transparent; color: #000; font-size: 1.25rem; cursor: pointer; }
+    .menu-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.55); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
+    .menu-panel { position: fixed; inset: 0 auto 0 0; z-index: 61; width: min(21rem,88vw); overflow-y: auto; background: #fff; transform: translateX(-100%); visibility: hidden; transition: transform .25s, visibility .25s; }
+    .menu-backdrop.open, .menu-panel.open { visibility: visible; }
+    .menu-backdrop.open { opacity: 1; }
+    .menu-panel.open { transform: translateX(0); }
+    .menu-panel-head { height: 5rem; padding-inline: 1.5rem; border-bottom: .0625rem solid rgba(0,0,0,.1); display: flex; align-items: center; justify-content: space-between; }
+    .mobile-nav { display: flex; flex-direction: column; padding: 1.5rem; }
+    .mobile-nav > a:not(.button) { padding: .85rem 0; border-bottom: .0625rem solid rgba(0,0,0,.1); }
+    .mobile-nav > .button { margin-top: 1.5rem; }
+
+    main { padding-top: 5rem; }
+    .hero { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); min-height: 42rem; background: var(--soft); }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 5rem clamp(2rem,5vw,5rem) 5rem max(1.5rem,calc((100vw - 90rem)/2 + 1.5rem)); }
+    .hero h1 { margin: 1.5rem 0 1.2rem; font-size: clamp(3.25rem,5vw,5.75rem); font-weight: 400; letter-spacing: -.055em; line-height: 1.02; }
+    .hero h1 em { color: var(--rose); font-weight: 400; white-space: nowrap; }
+    .hero-subtitle { max-width: 26rem; margin: 0; font-size: 1.125rem; line-height: 1.6; }
+    .hero .button { margin-top: 2.5rem; }
+    .hero-media { min-height: 42rem; overflow: hidden; }
+    .hero-media img { height: 100%; object-fit: cover; object-position: 43% center; }
+
+    .content-section { padding-block: clamp(4.5rem,8vw,8rem); }
+    .soft-section { background: var(--soft); }
+    .story-grid { display: grid; grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr); gap: clamp(3rem,7vw,8rem); align-items: start; }
+    .story-aside { position: sticky; top: 7rem; }
+    .story-aside h2, .split-copy h2, .philosophy h2 { margin: .85rem 0 2rem; font-size: clamp(2rem,3.4vw,3.75rem); font-weight: 400; letter-spacing: -.04em; line-height: 1.12; }
+    .story-aside h2 em, .split-copy h2 em, .philosophy h2 em { color: var(--rose); font-weight: 400; }
+    .story-aside img { max-height: 27rem; object-fit: cover; object-position: 45% center; border-radius: .5rem; }
+    .prose { max-width: 43rem; }
+    .prose p { margin: 0 0 1.35rem; font-size: 1.0625rem; line-height: 1.75; color: #333; }
+    .prose p:last-child { margin-bottom: 0; }
+    .prose .strong-line { color: #000; font-weight: 600; }
+    .split { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: clamp(3rem,7vw,8rem); align-items: center; }
+    .split-media img { height: clamp(25rem,40vw,36rem); object-fit: cover; border-radius: .5rem; }
+    .split-media.training img { object-position: 64% center; }
+    .split-media.purpose img { object-position: 50% center; }
+    .split-copy h2 { max-width: 40rem; }
+    .philosophy-inner { max-width: 56rem; margin-inline: auto; }
+    .philosophy h2 { max-width: 51rem; }
+    .philosophy .closing-thought { margin-top: 2.5rem; font-size: clamp(1.4rem,2.4vw,2.25rem); line-height: 1.4; letter-spacing: -.025em; color: #000; }
+    .signoff { padding-block: clamp(4.5rem,7vw,7rem); text-align: center; background: var(--soft); }
+    .signoff-name { margin: 0; font-size: clamp(2.5rem,5vw,4.5rem); font-style: italic; font-weight: 400; letter-spacing: -.05em; }
+    .signoff-tagline { margin: 1rem 0 2.5rem; color: #954267; font-size: .875rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+
+    .footer { background: #000; color: #fff; padding: 5rem 0 2.5rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; }
+    .footer-brand { font-size: 2rem; }
+    .footer-brand span { color: var(--pink); }
+    .footer p { max-width: 23rem; color: rgba(255,255,255,.7); line-height: 1.6; }
+    .footer h3 { margin: .5rem 0 1.25rem; color: var(--pink); font-size: .75rem; letter-spacing: .25em; text-transform: uppercase; }
+    .footer-links { display: flex; flex-direction: column; gap: .75rem; color: rgba(255,255,255,.8); font-size: .9375rem; }
+    .footer-links a:hover { color: var(--pink); }
+    .socials { display: flex; gap: .75rem; margin-top: 1.5rem; }
+    .socials a { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: rgba(255,255,255,.1); }
+    .socials a:hover { background: var(--pink); color: #000; }
+    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: .0625rem solid rgba(255,255,255,.2); color: rgba(255,255,255,.6); font-size: .75rem; }
+
+    @media (max-width: 63.9375rem) {
+      .desktop-nav, .header-cta { display: none; }
+      .menu-button { display: grid; place-items: center; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 4rem 1.5rem; }
+      .hero-media { min-height: 30rem; height: 52vw; max-height: 40rem; }
+      .hero-media img { width: 100%; }
+    }
+
+    @media (max-width: 47.9375rem) {
+      .story-grid, .split { grid-template-columns: 1fr; gap: 2.5rem; }
+      .story-aside { position: static; }
+      .story-aside img { max-height: 24rem; }
+      .split-media img { height: 24rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > :first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 39.9375rem) {
+      .container { width: min(100% - 3rem,90rem); }
+      .brand-caption { display: none; }
+      .hero-copy { padding-block: 4rem 3rem; }
+      .hero h1 { font-size: clamp(2.5rem,10vw,3.25rem); line-height: 1.08; }
+      .hero-subtitle { font-size: 1rem; }
+      .hero-media { min-height: 24rem; height: 90vw; }
+      .eyebrow { font-size: .8125rem; letter-spacing: .14em; }
+      .story-aside h2, .split-copy h2, .philosophy h2 { font-size: clamp(1.875rem,8vw,2.25rem); }
+      .prose p { font-size: .9375rem; line-height: 1.7; }
+      .content-section { padding-block: 4.5rem; }
+      .signoff-tagline { font-size: .75rem; line-height: 1.7; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > :first-child { grid-column: auto; }
+    }
+
+    @media (min-width: 64rem) {
+      .menu-backdrop, .menu-panel { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .menu-backdrop, .menu-panel, .button { transition: none; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Rita Fitness Coach home">
+        <span class="brand-name">Rita<span>.</span></span>
+        <span class="brand-caption">Fitness Coach</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="index.html#programs">Programs</a>
+        <a href="index.html#coaching">Coaching</a>
+        <a href="index.html#results">Results</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="index.html#book">Contact</a>
+      </nav>
+      <a class="button header-cta" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      <button id="menuBtn" class="menu-button" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+    </div>
+  </header>
+  <div id="menuBackdrop" class="menu-backdrop" aria-hidden="true"></div>
+  <div id="mobileMenu" class="menu-panel" role="dialog" aria-modal="true" aria-label="Mobile menu" aria-hidden="true" inert>
+    <div class="menu-panel-head">
+      <span class="brand-name">Rita<span>.</span></span>
+      <button id="closeMenuBtn" class="menu-button" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    </div>
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#coaching">Coaching</a>
+      <a href="index.html#results">Results</a>
+      <a href="index.html#testimonials">Reviews</a>
+      <a href="index.html#book">Contact</a>
+      <a class="button" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <span class="eyebrow">About your coach</span>
+        <h1 id="page-title">Meet <em>Rita Silva</em></h1>
+        <p class="hero-subtitle">Fitness Coach | Strength. Mindset. Transformation.</p>
+        <a class="button" href="#story">Read my story <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+      </div>
+      <div class="hero-media"><img src="assets/rita-coach-portrait.jpg" alt="Rita Silva in her fitness studio" fetchpriority="high" /></div>
+    </section>
+
+    <section id="story" class="content-section" aria-labelledby="story-title">
+      <div class="container story-grid">
+        <div class="story-aside">
+          <span class="eyebrow">Rita Silva</span>
+          <h2 id="story-title">My Story — From <em>Passion</em> to Purpose</h2>
+          <img src="assets/rita-coach-studio.jpg" alt="Rita in her studio" loading="lazy" />
+        </div>
+        <div class="prose">
+          <p>My journey with movement began when I was just eight years old, growing up in Brazil. Dancing was my first passion, and it taught me the importance of discipline, dedication, self-expression, and consistency from a young age.</p>
+          <p>But my journey into fitness wasn’t always straightforward.</p>
+          <p>In 2011, I moved to Australia, leaving behind everything familiar to start a new chapter. Like many people, I faced challenges adapting to a new country, finding my direction, and building a routine.</p>
+          <p>During that time, my own health and fitness weren’t where I wanted them to be. I lacked structure, struggled with consistency, and often felt lost when it came to training.</p>
+          <p>That changed when I decided to invest in myself and work with a personal trainer.</p>
+          <p>What started as a physical transformation became something much bigger. I discovered the power of structured training, better habits, discipline, and having someone guide and believe in my potential.</p>
+          <p class="strong-line">I didn’t just transform my body. I transformed my mindset, my confidence, and the direction of my life.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section" aria-labelledby="journey-title">
+      <div class="container split">
+        <div class="split-media training"><img src="assets/rita-coach-strength.jpg" alt="Rita strength training with dumbbells" loading="lazy" /></div>
+        <div class="split-copy">
+          <span class="eyebrow">The journey</span>
+          <h2 id="journey-title">From Dancing to <em>Bodybuilding</em> and Powerlifting</h2>
+          <div class="prose">
+            <p>As my passion for fitness grew, I challenged myself in new ways.</p>
+            <p>I stepped into the world of bodybuilding, preparing for and competing in a bodybuilding show. That experience taught me about dedication, nutrition, body composition, and the mental strength required to pursue a challenging goal.</p>
+            <p>My journey then evolved into powerlifting, where I developed a deeper appreciation for strength, performance, technique, and progressive overload.</p>
+            <p>From the creativity and discipline of dance to the physical demands of bodybuilding and the strength of powerlifting, every chapter helped shape the coach I am today.</p>
+            <p>But the most valuable lesson I learned was that real transformation is about so much more than appearance.</p>
+            <p class="strong-line">It’s about what you become through the process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section" aria-labelledby="purpose-title">
+      <div class="container split">
+        <div class="split-copy">
+          <span class="eyebrow">My purpose</span>
+          <h2 id="purpose-title">Turning My Passion Into <em>My Purpose</em></h2>
+          <div class="prose">
+            <p>Inspired by my own transformation, I pursued further education in health and fitness, including a Diploma and Bachelor of Health Science, and built my career as a fitness professional.</p>
+            <p>Over the past six years, I’ve developed my personal training business in Australia, helping clients transform their physiques, improve their strength, build confidence, and create healthier lifestyles.</p>
+            <p>I’ve had the privilege of working with people of different ages, abilities, and backgrounds, each with their own challenges and goals.</p>
+            <p>And while seeing physical results is incredibly rewarding, what inspires me most is watching someone become more confident, capable, and proud of themselves.</p>
+          </div>
+        </div>
+        <div class="split-media purpose"><img src="assets/rita-banner-portrait.jpg" alt="Rita Silva" loading="lazy" /></div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section philosophy" aria-labelledby="philosophy-title">
+      <div class="container philosophy-inner">
+        <span class="eyebrow">How I coach</span>
+        <h2 id="philosophy-title">My Coaching <em>Philosophy</em></h2>
+        <div class="prose">
+          <p>I believe lasting results come from the combination of strength training, nutrition, mindset, and sustainable habits.</p>
+          <p>My approach isn’t about quick fixes, extreme restrictions, or chasing perfection.</p>
+          <p>It’s about building a realistic structure that works for your lifestyle, understanding your body, and developing the consistency to keep progressing long after the initial motivation fades.</p>
+          <p>I know what it feels like to start from scratch, to feel uncertain, and to need guidance. I’ve experienced firsthand how powerful the right support and structure can be.</p>
+          <p>That’s why my mission is to help you discover what you’re truly capable of, physically and mentally.</p>
+          <p class="closing-thought">Because fitness isn’t just about changing how you look. It’s about changing how you feel, how you live, and what you believe is possible for yourself.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="signoff" aria-label="Rita Silva sign-off">
+      <div class="container">
+        <p class="signoff-name">Rita Silva</p>
+        <p class="signoff-tagline">Stronger • Healthier • Happier You</p>
+        <a class="button" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Rita<span>.</span></div>
+          <p>Online fitness, mindset and women's transformation coaching. Stop negotiating with yourself start the version of you that you keep imagining.</p>
+          <div class="socials">
+            <a href="https://instagram.com/rita_fitnesscoach" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank" rel="noopener" aria-label="All links"><i class="fa-solid fa-link" aria-hidden="true"></i></a>
+            <a href="https://www.tiktok.com/@rita_fitnesscoach" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <nav class="footer-links" aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html" aria-current="page">About Rita</a>
+            <a href="index.html#programs">Programs</a>
+            <a href="index.html#results">Transformations</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <div class="footer-links">
+            <a href="index.html#book">Book a call</a>
+            <a href="https://instagram.com/rita_fitnesscoach" target="_blank" rel="noopener">DM 'READY'</a>
+            <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank" rel="noopener">All links</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Rita Fitness Coach. All rights reserved.</span>
+        <span>Designed with intention ✦ Built for women who decide to start.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuBackdrop = document.getElementById('menuBackdrop');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+    function setMenuOpen(isOpen, restoreFocus = true) {
+      mobileMenu.classList.toggle('open', isOpen);
+      menuBackdrop.classList.toggle('open', isOpen);
+      mobileMenu.toggleAttribute('inert', !isOpen);
+      mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      document.body.classList.toggle('menu-open', isOpen);
+      if (isOpen) closeMenuBtn.focus();
+      else if (restoreFocus) menuBtn.focus();
+    }
+
+    menuBtn.addEventListener('click', () => setMenuOpen(!mobileMenu.classList.contains('open')));
+    closeMenuBtn.addEventListener('click', () => setMenuOpen(false));
+    menuBackdrop.addEventListener('click', () => setMenuOpen(false));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenuOpen(false)));
+    document.addEventListener('keydown', event => {
+      if (!mobileMenu.classList.contains('open')) return;
+      if (event.key === 'Escape') { setMenuOpen(false); return; }
+      if (event.key !== 'Tab') return;
+      const focusable = [...mobileMenu.querySelectorAll('button, a[href]')];
+      if (event.shiftKey && document.activeElement === focusable[0]) {
+        event.preventDefault();
+        focusable[focusable.length - 1].focus();
+      } else if (!event.shiftKey && document.activeElement === focusable[focusable.length - 1]) {
+        event.preventDefault();
+        focusable[0].focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) setMenuOpen(false, false);
+    });
+  </script>
+</body>
+
+</html>
