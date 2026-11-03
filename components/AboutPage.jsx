@@ -8,7 +8,7 @@ export default function AboutPage() {
         <span className="eyebrow">About your coach</span>
         <h1 id="page-title">Meet <em className="heading-highlight">Rita Silva</em></h1>
         <p className="hero-subtitle">Fitness Coach | Strength. Mindset. Transformation.</p>
-        <a className="button" href="#story">Read my story <i className="fa-solid fa-arrow-down" aria-hidden="true" /></a>
+        <a className="button arrow-action" href="#story">Read my story <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
       </div>
       <div className="hero-media"><img src="/assets/rita-coach-portrait.jpg" alt="Rita Silva in her fitness studio" fetchPriority="high" /></div>
     </section>
@@ -80,7 +80,7 @@ export default function AboutPage() {
       <div className="container">
         <p className="signoff-name">Rita Silva</p>
         <p className="signoff-tagline">Stronger • Healthier • Happier You</p>
-        <a className="button" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i className="fa-solid fa-arrow-right" aria-hidden="true" /></a>
+        <a className="button arrow-action" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
       </div>
     </section>
   </main>

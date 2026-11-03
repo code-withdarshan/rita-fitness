@@ -88,11 +88,15 @@ export default function SiteHeader() {
               </Link>
             ))}
           </nav>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-md bg-black text-white text-sm hover:bg-rose hover:text-black transition">
-            Book a call <i className="fa-solid fa-arrow-right text-xs" aria-hidden="true" />
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-md bg-black text-white text-sm hover:bg-rose hover:text-black transition">
+            Book a call <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span>
           </a>
-          <button ref={openButton} type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-controls="mobileMenu" aria-expanded={menuOpen} onClick={() => setMenuOpen(open => !open)} className="lg:hidden w-10 h-10 flex items-center justify-center text-black text-xl hover:text-mocha transition">
-            <i className="fa-solid fa-bars" aria-hidden="true" />
+          <button ref={openButton} type="button" aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-controls="mobileMenu" aria-expanded={menuOpen} onClick={() => setMenuOpen(open => !open)} className={`menu-toggle lg:hidden w-10 h-10 flex items-center justify-center text-black hover:text-mocha transition${menuOpen ? ' open' : ''}`}>
+            <span className="menu-icon" aria-hidden="true">
+              <span className="menu-line" />
+              <span className="menu-line menu-line-medium" />
+              <span className="menu-line menu-line-short" />
+            </span>
           </button>
         </div>
       </header>
@@ -110,8 +114,8 @@ export default function SiteHeader() {
               {link.label}
             </Link>
           ))}
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 rounded-md bg-black text-white px-4 py-3 text-center font-semibold hover:bg-rose hover:text-black transition" onClick={() => closeMenu()}>
-            Book a call <i className="fa-solid fa-arrow-right text-xs" aria-hidden="true" />
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 rounded-md bg-black text-white px-4 py-3 text-center font-semibold hover:bg-rose hover:text-black transition" onClick={() => closeMenu()}>
+            Book a call <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span>
           </a>
         </nav>
       </div>

@@ -19,8 +19,8 @@ export default function HomePage() {
         transformations with structure, support and someone actually guiding you.
       </p>
       <div className="hero-actions mt-9">
-        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="px-6 py-3.5 rounded-md bg-black text-white text-sm normal-case tracking-normal font-normal hover:bg-rose hover:text-black transition-colors">Start
-          your transformation <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action px-6 py-3.5 rounded-md bg-black text-white text-sm normal-case tracking-normal font-normal hover:bg-rose hover:text-black transition-colors">Start
+          your transformation <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         <a href="#programs" className="px-6 py-3.5 rounded-md border border-black/40 text-black text-sm normal-case tracking-normal font-normal hover:bg-white transition">Explore
           programs</a>
       </div>
@@ -92,7 +92,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Flexible nutrition strategy</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Weekly check-ins</li>
           </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-rose text-ink flex items-center justify-center"><i className="fa-solid fa-user" /></div>
@@ -104,7 +104,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Bi-weekly video calls</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Fully bespoke programming</li>
           </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-clay text-white flex items-center justify-center"><i className="fa-solid fa-brain" /></div>
@@ -116,7 +116,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Confidence frameworks</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Weekly mindset audits</li>
           </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-mocha text-white flex items-center justify-center"><i className="fa-solid fa-utensils" /></div>
@@ -128,7 +128,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Gym or home options</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Lifetime access</li>
           </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-ink text-cream flex items-center justify-center"><i className="fa-solid fa-spa" /></div>
@@ -140,7 +140,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Stress management</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Routine architecture</li>
           </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-cta relative rounded-lg p-6 sm:p-8 reveal bg-black text-white overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-rose/40 blur-3xl" />
@@ -148,19 +148,25 @@ export default function HomePage() {
           <h3 className="font-display text-2xl mt-3">Signature Method</h3>
           <p className="mt-3 text-white/75 text-sm">Training + nutrition + mindset + lifestyle the complete Rita method
             for women who want it all to finally click.</p>
-          <a href="https://form.jotform.com/253616429002047" className="mt-6 inline-flex items-center px-5 py-3 rounded-md border border-white/70 text-white hover:bg-white hover:text-black transition">Book
-            consultation <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" className="arrow-action mt-6 inline-flex items-center px-5 py-3 rounded-md border border-white/70 text-white hover:bg-white hover:text-black transition">Book
+            consultation <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
       </div>
     </div>
   </section>
   <section id="coaching" className="py-16 md:py-24">
     <div className="max-w-[90rem] mx-auto px-6 grid lg:grid-cols-2 gap-14 items-center">
-      <div className="reveal grid grid-cols-2 gap-4">
-        <img src="/assets/rita-coach-studio.jpg" alt="Rita in the studio" loading="lazy" className="rounded-lg w-full h-72 object-cover" />
-        <img src="/assets/rita-coach-portrait.jpg" alt="Rita smiling in the studio" loading="lazy" className="rounded-lg w-full h-72 object-cover mt-8" />
-        <img src="/assets/rita-coach-strength.jpg" alt="Rita strength training with dumbbells" loading="lazy" className="rounded-lg w-full h-72 object-cover -mt-4" />
-        <img src="/assets/rita-training.jpg" alt="Rita training with a dumbbell" loading="lazy" className="rounded-lg w-full h-72 object-cover mt-4" />
+      <div className="coach-gallery reveal">
+        <img src="/assets/rita-coach-studio.jpg" alt="Rita in the studio" loading="eager" className="coach-gallery-item coach-gallery-item-one" />
+        <img src="/assets/rita-coach-portrait.jpg" alt="Rita smiling in the studio" loading="eager" className="coach-gallery-item coach-gallery-item-two" />
+        <img src="/assets/rita-coach-strength.jpg" alt="Rita strength training with dumbbells" loading="eager" className="coach-gallery-item coach-gallery-item-three" />
+        <img src="/assets/rita-training.jpg" alt="Rita training with a dumbbell" loading="eager" className="coach-gallery-item coach-gallery-item-four" />
+        <div className="coach-gallery-pagination" aria-label="Coaching gallery slides">
+          <button type="button" className="coach-gallery-dot is-active" data-gallery-index="0" aria-label="Show coaching image 1" aria-current="true" />
+          <button type="button" className="coach-gallery-dot" data-gallery-index="1" aria-label="Show coaching image 2" />
+          <button type="button" className="coach-gallery-dot" data-gallery-index="2" aria-label="Show coaching image 3" />
+          <button type="button" className="coach-gallery-dot" data-gallery-index="3" aria-label="Show coaching image 4" />
+        </div>
       </div>
       <div className="reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Meet your coach</span>
@@ -169,8 +175,8 @@ export default function HomePage() {
         <p className="mt-5 text-ink/70">For nearly a decade I've helped women rebuild their bodies, their confidence and
           their relationship with food and training. My approach is simple: real structure, no extremes, zero shame
           and a coach who actually shows up for you.</p>
-        <a href="/about" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-mocha hover:text-black transition">Read Rita's full story <i className="fa-solid fa-arrow-right text-xs" aria-hidden="true" /></a>
-        <div className="mt-8 grid grid-cols-2 gap-4">
+        <a href="/about" className="arrow-action mt-5 inline-flex items-center gap-2 text-sm font-semibold text-mocha hover:text-black transition">Read Rita's full story <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
+        <div className="coaching-features mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="glass rounded-md p-5">
             <div className="text-rose"><i className="fa-solid fa-trophy" /></div>
             <div className="font-display text-xl mt-2">Certified</div>
@@ -227,22 +233,22 @@ export default function HomePage() {
           </figcaption>
         </figure>
       </div>
-      <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
-        <div className="glass-soft rounded-md p-6 text-center">
-          <div className="font-display text-3xl text-mocha">-12kg</div>
-          <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Average fat loss</div>
+      <div className="results-stats mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+        <div className="result-stat glass-soft rounded-md p-6 text-center">
+          <div className="result-stat-value font-display text-3xl text-mocha">-12kg</div>
+          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Average fat loss</div>
         </div>
-        <div className="glass-soft rounded-md p-6 text-center">
-          <div className="font-display text-3xl text-mocha">+5kg</div>
-          <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Lean muscle gain</div>
+        <div className="result-stat glass-soft rounded-md p-6 text-center">
+          <div className="result-stat-value font-display text-3xl text-mocha">+5kg</div>
+          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Lean muscle gain</div>
         </div>
-        <div className="glass-soft rounded-md p-6 text-center">
-          <div className="font-display text-3xl text-mocha">16wks</div>
-          <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Avg program length</div>
+        <div className="result-stat glass-soft rounded-md p-6 text-center">
+          <div className="result-stat-value font-display text-3xl text-mocha">16wks</div>
+          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Avg program length</div>
         </div>
-        <div className="glass-soft rounded-md p-6 text-center">
-          <div className="font-display text-3xl text-mocha">100%</div>
-          <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Custom to you</div>
+        <div className="result-stat glass-soft rounded-md p-6 text-center">
+          <div className="result-stat-value font-display text-3xl text-mocha">100%</div>
+          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Custom to you</div>
         </div>
       </div>
     </div>
@@ -278,8 +284,8 @@ export default function HomePage() {
               to start.</span></h2>
         </div>
         <div className="flex items-center gap-3 shrink-0" aria-label="Testimonial navigation">
-          <button type="button" aria-label="Previous review" className="testiBtn w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={-1}><i className="fa-solid fa-arrow-left" /></button>
-          <button type="button" aria-label="Next review" className="testiBtn w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={1}><i className="fa-solid fa-arrow-right" /></button>
+          <button type="button" aria-label="Previous review" className="testiBtn testimonial-nav-button w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={-1}><i className="fa-solid fa-arrow-left" /></button>
+          <button type="button" aria-label="Next review" className="testiBtn testimonial-nav-button w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={1}><i className="fa-solid fa-arrow-right" /></button>
         </div>
       </div>
       <div className="mt-10 relative overflow-hidden reveal">
@@ -386,8 +392,8 @@ export default function HomePage() {
         <h3 className="font-display text-3xl mt-6">Ready to begin?</h3>
         <p className="mt-4 text-ink/70 max-w-sm mx-auto">Book your free 20-minute consultation. Share a little about your
           goals and I'll personally get back to you within 24 hours.</p>
-        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-8 inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-md bg-ink text-cream hover:bg-rose hover:text-black transition">
-          Book my consultation <i className="fa-solid fa-arrow-right" /></a>
+        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-8 inline-flex items-center justify-center gap-3 w-full px-6 py-4 rounded-md bg-ink text-cream hover:bg-rose hover:text-black transition">
+          Book my consultation <span className="arrow-icon" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         <p className="mt-4 text-xs uppercase tracking-widest text-mocha">Free · No pressure · Just clarity ✦</p>
       </div>
     </div>
@@ -429,11 +435,13 @@ export default function HomePage() {
       <div>Designed with intention ✦ Built for women who decide to start.</div>
     </div>
   </footer>
-  <a href="https://wa.me/000" target="_blank" className="float-btn fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center">
-    <i className="fa-brands fa-whatsapp text-2xl" />
+  <a href="https://wa.me/000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" className="social-tab social-tab-whatsapp fixed bottom-6 right-0 z-40 bg-[#25D366] text-white">
+    <i className="fa-brands fa-whatsapp social-tab-icon" aria-hidden="true" />
+    <span className="social-tab-label">WhatsApp</span>
   </a>
-  <a href="https://instagram.com/rita_fitnesscoach" target="_blank" className="float-btn fixed bottom-24 right-6 z-40 w-14 h-14 rounded-full text-white flex items-center justify-center" style={{background: 'linear-gradient(135deg,#f58529,#dd2a7b,#8134af)'}}>
-    <i className="fa-brands fa-instagram text-2xl" />
+  <a href="https://instagram.com/rita_fitnesscoach" target="_blank" rel="noopener" aria-label="Follow on Instagram" className="social-tab social-tab-instagram fixed bottom-24 right-0 z-40 text-white">
+    <i className="fa-brands fa-instagram social-tab-icon" aria-hidden="true" />
+    <span className="social-tab-label">Instagram</span>
   </a>
 </div>
 

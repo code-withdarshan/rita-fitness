@@ -33,6 +33,63 @@ export function initHomeInteractions() {
   }, { threshold: 0.5 });
   document.querySelectorAll('.counter').forEach(element => counterObserver.observe(element));
 
+  const coachGallery = document.querySelector('.coach-gallery');
+  const galleryItems = coachGallery ? [...coachGallery.querySelectorAll('.coach-gallery-item')] : [];
+  const galleryDots = coachGallery ? [...coachGallery.querySelectorAll('.coach-gallery-dot')] : [];
+  let galleryTimer = null;
+  let galleryRotation = 0;
+  let gallerySlide = 0;
+  const mobileGallery = matchMedia('(max-width: 39.9375rem)');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const setMobileGallerySlide = (index) => {
+    gallerySlide = (index + galleryItems.length) % galleryItems.length;
+    galleryItems.forEach((item, itemIndex) => {
+      item.style.transform = `translateX(${(itemIndex - gallerySlide) * 100}%)`;
+    });
+    galleryDots.forEach((dot, dotIndex) => {
+      const active = dotIndex === gallerySlide;
+      dot.classList.toggle('is-active', active);
+      dot.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+  };
+  let removeGalleryTouch = null;
+  if (galleryItems.length > 1 && mobileGallery.matches) {
+    coachGallery.classList.add('gallery-mobile-carousel');
+    setMobileGallerySlide(0);
+    galleryDots.forEach(dot => dot.addEventListener('click', () => {
+      setMobileGallerySlide(Number(dot.dataset.galleryIndex));
+    }));
+    let pointerStartX = 0;
+    const onPointerDown = event => {
+      pointerStartX = event.clientX;
+      coachGallery.setPointerCapture?.(event.pointerId);
+    };
+    const onPointerUp = event => {
+      const distance = event.clientX - pointerStartX;
+      if (Math.abs(distance) < 40) return;
+      setMobileGallerySlide(gallerySlide + (distance < 0 ? 1 : -1));
+    };
+    coachGallery.addEventListener('pointerdown', onPointerDown);
+    coachGallery.addEventListener('pointerup', onPointerUp);
+    removeGalleryTouch = () => {
+      coachGallery.removeEventListener('pointerdown', onPointerDown);
+      coachGallery.removeEventListener('pointerup', onPointerUp);
+    };
+    if (!reducedMotion.matches) {
+      galleryTimer = setInterval(() => {
+        setMobileGallerySlide(gallerySlide + 1);
+      }, 4200);
+    }
+  } else if (galleryItems.length > 1 && !reducedMotion.matches) {
+    const rotateGallery = () => {
+      galleryRotation = (galleryRotation + 1) % 4;
+      coachGallery.classList.remove('gallery-rotation-0', 'gallery-rotation-1', 'gallery-rotation-2', 'gallery-rotation-3');
+      coachGallery.classList.add(`gallery-rotation-${galleryRotation}`);
+    };
+    coachGallery.classList.add('gallery-rotation-0');
+    galleryTimer = setInterval(rotateGallery, 4200);
+  }
+
   const track = document.getElementById('testiTrack');
   const buttons = [...document.querySelectorAll('.testiBtn')];
   const slideCount = track?.children.length || 0;
@@ -65,6 +122,9 @@ export function initHomeInteractions() {
     revealObserver.disconnect();
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
+    if (galleryTimer) clearInterval(galleryTimer);
+    if (removeGalleryTouch) removeGalleryTouch();
+    galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));
     buttons.forEach(button => button.removeEventListener('click', onButtonClick));
     if (timer) clearInterval(timer);
   };
