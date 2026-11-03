@@ -528,7 +528,7 @@
       background: rgba(0, 0, 0, .55);
       opacity: 0;
       visibility: hidden;
-      transition: opacity .25s ease, visibility .25s ease;
+      transition: opacity .4s ease, visibility .4s ease;
     }
 
     .mobile-menu-panel {
@@ -541,7 +541,8 @@
       background: #fff;
       transform: translateX(-100%);
       visibility: hidden;
-      transition: transform .25s ease, visibility .25s ease;
+      box-shadow: .75rem 0 2rem rgba(0, 0, 0, .12);
+      transition: transform .45s cubic-bezier(.22, 1, .36, 1), visibility .45s ease;
       z-index: 61;
     }
 
