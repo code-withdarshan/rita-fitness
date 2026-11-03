@@ -6,7 +6,7 @@ export const metadata = {
   openGraph: {
     title: 'About Rita Silva | Fitness Coach',
     description: 'Strength. Mindset. Transformation. Meet Rita Silva and learn the story behind her coaching.',
-    ...(process.env.NEXT_PUBLIC_SITE_URL && { images: ['/assets/rita-coach-portrait.jpg'] }),
+    images: ['/assets/rita-coach-portrait.jpg'],
   },
 };
 

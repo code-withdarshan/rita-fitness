@@ -7,44 +7,6 @@ export default function HomePage() {
   useEffect(initHomeInteractions, []);
   return (
 <div className="page-content">
-  <header id="nav" className="nav-blur fixed top-0 inset-x-0 z-50 bg-white border-b border-black/10">
-    <div className="max-w-[90rem] mx-auto px-6 h-20 flex items-center justify-between gap-6">
-      <a href="#top" className="flex items-center gap-2 shrink-0" aria-label="Rita Fitness Coach home">
-        <span className="font-display text-2xl tracking-wide text-black">Rita<span className="text-rose">.</span></span>
-        <span className="hidden sm:inline text-[0.625rem] uppercase tracking-[0.3em] text-black/70">Fitness Coach</span>
-      </a>
-      <nav className="hidden lg:flex items-center gap-7 text-sm text-ink/80">
-        <a href="#programs" className="hover:text-mocha">Programs</a>
-        <a href="#coaching" className="hover:text-mocha">Coaching</a>
-        <a href="/about" className="hover:text-mocha">About</a>
-        <a href="#results" className="hover:text-mocha">Results</a>
-        <a href="#testimonials" className="hover:text-mocha">Reviews</a>
-        <a href="#faq" className="hover:text-mocha">FAQ</a>
-        <a href="#book" className="hover:text-mocha">Contact</a>
-      </nav>
-      <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="hidden md:inline-flex items-center gap-2 px-5 py-3 rounded-md bg-black text-white text-sm hover:bg-rose hover:text-black transition">Book a call <i className="fa-solid fa-arrow-right text-xs" /></a>
-      <button id="menuBtn" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false" className="lg:hidden w-10 h-10 flex items-center justify-center text-black text-xl hover:text-mocha transition"><i className="fa-solid fa-bars" /></button>
-    </div>
-  </header>
-  <div id="menuBackdrop" className="mobile-menu-backdrop" aria-hidden="true" />
-  <div id="mobileMenu" className="mobile-menu-panel text-black" role="dialog" aria-modal="true" aria-label="Mobile menu" aria-hidden="true" inert>
-    <div className="flex items-center justify-between px-6 h-20 border-b border-black/10">
-      <span className="font-display text-2xl tracking-wide">Rita<span className="text-rose">.</span></span>
-      <button id="closeMenuBtn" type="button" className="w-10 h-10 flex items-center justify-center text-xl" aria-label="Close menu">
-        <i className="fa-solid fa-xmark" />
-      </button>
-    </div>
-    <nav aria-label="Mobile navigation" className="px-6 py-6 flex flex-col text-base">
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#programs">Programs</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#coaching">Coaching</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="/about">About</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#results">Results</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#testimonials">Reviews</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#faq">FAQ</a>
-      <a className="py-3 border-b border-black/10 hover:text-mocha" href="#book">Contact</a>
-      <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 rounded-md bg-black text-white px-4 py-3 text-center font-semibold hover:bg-rose hover:text-black transition">Book a call →</a>
-    </nav>
-  </div>
   <section id="top" className="hero-split pt-20">
     <div className="hero-copy reveal">
       <span className="text-xs uppercase tracking-[0.28em] font-semibold text-black/70">Now coaching women worldwide</span>

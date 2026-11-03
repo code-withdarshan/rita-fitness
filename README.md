@@ -15,4 +15,4 @@ Open [http://localhost:3000](http://localhost:3000). Run `npm run build` to gene
 
 The project uses Tailwind CSS and keeps the site's original custom styles in `app/globals.css`. Images and videos are served from `public/assets/`.
 
-Set `NEXT_PUBLIC_SITE_URL` to the deployed site's origin when building to include absolute Open Graph image URLs. The site works without it.
+The production site is [rita-fitness.vercel.app](https://rita-fitness.vercel.app/). Vercel serves the static export from `out/` using the settings in `vercel.json`. Set `NEXT_PUBLIC_SITE_URL` when building for a different domain so Open Graph image URLs use that domain.

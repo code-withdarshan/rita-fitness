@@ -1,80 +1,4 @@
-function initMenu() {
-  const menuButton = document.getElementById('menuBtn');
-  const closeButton = document.getElementById('closeMenuBtn');
-  const menu = document.getElementById('mobileMenu');
-  const backdrop = document.getElementById('menuBackdrop');
-  if (!menuButton || !closeButton || !menu || !backdrop) return () => {};
-
-  function setOpen(open, restoreFocus = true) {
-    menu.classList.toggle('open', open);
-    backdrop.classList.toggle('open', open);
-    menu.toggleAttribute('inert', !open);
-    menu.setAttribute('aria-hidden', String(!open));
-    menuButton.setAttribute('aria-expanded', String(open));
-    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    document.body.classList.toggle('menu-open', open);
-    if (open) closeButton.focus();
-    else if (restoreFocus) menuButton.focus();
-  }
-
-  const toggle = () => setOpen(!menu.classList.contains('open'));
-  const close = () => setOpen(false);
-  const closeForLink = () => setOpen(false, false);
-  const onKeyDown = (event) => {
-    if (!menu.classList.contains('open')) return;
-    if (event.key === 'Escape') {
-      setOpen(false);
-      return;
-    }
-    if (event.key !== 'Tab') return;
-    const focusable = [...menu.querySelectorAll('button, a[href]')];
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  };
-  const onResize = () => {
-    if (window.innerWidth >= 1024 && menu.classList.contains('open')) setOpen(false, false);
-  };
-
-  menuButton.addEventListener('click', toggle);
-  closeButton.addEventListener('click', close);
-  backdrop.addEventListener('click', close);
-  const links = [...menu.querySelectorAll('a')];
-  links.forEach(link => link.addEventListener('click', closeForLink));
-  document.addEventListener('keydown', onKeyDown);
-  window.addEventListener('resize', onResize);
-
-  return () => {
-    menuButton.removeEventListener('click', toggle);
-    closeButton.removeEventListener('click', close);
-    backdrop.removeEventListener('click', close);
-    links.forEach(link => link.removeEventListener('click', closeForLink));
-    document.removeEventListener('keydown', onKeyDown);
-    window.removeEventListener('resize', onResize);
-    document.body.classList.remove('menu-open');
-  };
-}
-
-export function initAboutInteractions() {
-  return initMenu();
-}
-
 export function initHomeInteractions() {
-  const cleanupMenu = initMenu();
-  const nav = document.getElementById('nav');
-  const onScroll = () => {
-    const threshold = 1.875 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-    nav?.classList.toggle('scrolled', window.scrollY > threshold);
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -137,8 +61,6 @@ export function initHomeInteractions() {
   }, 6000) : null;
 
   return () => {
-    cleanupMenu();
-    window.removeEventListener('scroll', onScroll);
     window.removeEventListener('resize', move);
     revealObserver.disconnect();
     counterObserver.disconnect();

@@ -1,49 +1,7 @@
-"use client";
-
-import { useEffect } from 'react';
-import { initAboutInteractions } from './interactions';
-
 export default function AboutPage() {
-  useEffect(initAboutInteractions, []);
   return (
     <div className="about-page">
 <div className="page-content">
-  <header className="site-header">
-    <div className="container header-inner">
-      <a className="brand" href="/" aria-label="Rita Fitness Coach home">
-        <span className="brand-name">Rita<span>.</span></span>
-        <span className="brand-caption">Fitness Coach</span>
-      </a>
-      <nav className="desktop-nav" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/about" aria-current="page">About</a>
-        <a href="/#programs">Programs</a>
-        <a href="/#coaching">Coaching</a>
-        <a href="/#results">Results</a>
-        <a href="/#testimonials">Reviews</a>
-        <a href="/#book">Contact</a>
-      </nav>
-      <a className="button header-cta" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i className="fa-solid fa-arrow-right" aria-hidden="true" /></a>
-      <button id="menuBtn" className="menu-button" type="button" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><i className="fa-solid fa-bars" aria-hidden="true" /></button>
-    </div>
-  </header>
-  <div id="menuBackdrop" className="menu-backdrop" aria-hidden="true" />
-  <div id="mobileMenu" className="menu-panel" role="dialog" aria-modal="true" aria-label="Mobile menu" aria-hidden="true" inert>
-    <div className="menu-panel-head">
-      <span className="brand-name">Rita<span>.</span></span>
-      <button id="closeMenuBtn" className="menu-button" type="button" aria-label="Close menu"><i className="fa-solid fa-xmark" aria-hidden="true" /></button>
-    </div>
-    <nav className="mobile-nav" aria-label="Mobile navigation">
-      <a href="/">Home</a>
-      <a href="/about" aria-current="page">About</a>
-      <a href="/#programs">Programs</a>
-      <a href="/#coaching">Coaching</a>
-      <a href="/#results">Results</a>
-      <a href="/#testimonials">Reviews</a>
-      <a href="/#book">Contact</a>
-      <a className="button" href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener">Book a call <i className="fa-solid fa-arrow-right" aria-hidden="true" /></a>
-    </nav>
-  </div>
   <main>
     <section className="hero" aria-labelledby="page-title">
       <div className="hero-copy">

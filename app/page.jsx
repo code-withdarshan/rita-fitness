@@ -7,7 +7,7 @@ export const metadata = {
   openGraph: {
     title: "Rita | Women's Transformation Coach",
     description: 'Imagine where you could be in 12 weeks — with structure, support and someone guiding you.',
-    ...(process.env.NEXT_PUBLIC_SITE_URL && { images: ['/assets/rita-banner-portrait.jpg'] }),
+    images: ['/assets/rita-banner-portrait.jpg'],
   },
 };
 

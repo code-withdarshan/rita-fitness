@@ -452,7 +452,6 @@
     .about-page * { box-sizing: border-box; }
     .about-page { scroll-behavior: smooth; }
     .about-page { margin: 0; font-family: Inter, sans-serif; color: var(--ink); background: #fff; }
-    body.menu-open { overflow: hidden; }
     .about-page a { color: inherit; text-decoration: none; }
     .about-page button { font: inherit; }
     .about-page img { display: block; width: 100%; }
@@ -461,26 +460,6 @@
     .about-page .button { display: inline-flex; align-items: center; justify-content: center; gap: .7rem; min-height: 3rem; padding: .85rem 1.5rem; border-radius: .375rem; background: #000; color: #fff; font-size: .8125rem; font-weight: 700; letter-spacing: .05em; text-align: center; text-transform: uppercase; transition: background .2s, color .2s; }
     .about-page .button:hover, .about-page .button:focus-visible { background: var(--pink); color: #000; }
     .about-page :focus-visible { outline: .15rem solid var(--rose); outline-offset: .2rem; }
-
-    .about-page .site-header { position: fixed; inset: 0 0 auto; z-index: 50; height: 5rem; background: rgba(255,255,255,.97); border-bottom: .0625rem solid rgba(0,0,0,.1); }
-    .about-page .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
-    .about-page .brand { display: inline-flex; align-items: center; gap: .65rem; flex: none; }
-    .about-page .brand-name { font-size: 1.5rem; letter-spacing: .02em; }
-    .about-page .brand-name span { color: var(--pink); }
-    .about-page .brand-caption { font-size: .625rem; letter-spacing: .3em; text-transform: uppercase; color: #555; }
-    .about-page .desktop-nav { display: flex; align-items: center; gap: 1.6rem; font-size: .875rem; }
-    .about-page .desktop-nav a:hover, .about-page .desktop-nav a[aria-current="page"] { color: var(--rose); }
-    .about-page .header-cta { font-size: .8125rem; text-transform: none; letter-spacing: 0; min-height: 2.75rem; padding: .65rem 1.15rem; }
-    .about-page .menu-button { display: none; width: 2.75rem; height: 2.75rem; padding: 0; border: 0; background: transparent; color: #000; font-size: 1.25rem; cursor: pointer; }
-    .about-page .menu-backdrop { position: fixed; inset: 0; z-index: 60; background: rgba(0,0,0,.55); opacity: 0; visibility: hidden; transition: opacity .25s, visibility .25s; }
-    .about-page .menu-panel { position: fixed; inset: 0 auto 0 0; z-index: 61; width: min(21rem,88vw); overflow-y: auto; background: #fff; transform: translateX(-100%); visibility: hidden; transition: transform .25s, visibility .25s; }
-    .about-page .menu-backdrop.open, .about-page .menu-panel.open { visibility: visible; }
-    .about-page .menu-backdrop.open { opacity: 1; }
-    .about-page .menu-panel.open { transform: translateX(0); }
-    .about-page .menu-panel-head { height: 5rem; padding-inline: 1.5rem; border-bottom: .0625rem solid rgba(0,0,0,.1); display: flex; align-items: center; justify-content: space-between; }
-    .about-page .mobile-nav { display: flex; flex-direction: column; padding: 1.5rem; }
-    .about-page .mobile-nav > a:not(.button) { padding: .85rem 0; border-bottom: .0625rem solid rgba(0,0,0,.1); }
-    .about-page .mobile-nav > .button { margin-top: 1.5rem; }
 
     .about-page main { padding-top: 5rem; }
     .about-page .hero { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); min-height: 42rem; background: var(--soft); }
@@ -529,8 +508,6 @@
     .about-page .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 4rem; padding-top: 1.5rem; border-top: .0625rem solid rgba(255,255,255,.2); color: rgba(255,255,255,.6); font-size: .75rem; }
 
     @media (max-width: 63.9375rem) {
-      .about-page .desktop-nav, .about-page .header-cta { display: none; }
-      .about-page .menu-button { display: grid; place-items: center; }
       .about-page .hero { grid-template-columns: 1fr; }
       .about-page .hero-copy { padding: 4rem 1.5rem; }
       .about-page .hero-media { min-height: 30rem; height: 52vw; max-height: 40rem; }
@@ -548,7 +525,6 @@
 
     @media (max-width: 39.9375rem) {
       .about-page .container { width: min(100% - 3rem,90rem); }
-      .about-page .brand-caption { display: none; }
       .about-page .hero-copy { padding-block: 4rem 3rem; }
       .about-page .hero h1 { font-size: clamp(2.5rem,10vw,3.25rem); line-height: 1.08; }
       .about-page .hero-subtitle { font-size: 1rem; }
@@ -562,11 +538,7 @@
       .about-page .footer-grid > :first-child { grid-column: auto; }
     }
 
-    @media (min-width: 64rem) {
-      .about-page .menu-backdrop, .about-page .menu-panel { display: none; }
-    }
-
     @media (prefers-reduced-motion: reduce) {
       .about-page { scroll-behavior: auto; }
-      .about-page .menu-backdrop, .about-page .menu-panel, .about-page .button { transition: none; }
+      .about-page .button { transition: none; }
     }

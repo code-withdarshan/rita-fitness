@@ -1,11 +1,10 @@
 import './globals.css';
+import SiteHeader from '../components/SiteHeader';
 
 export const metadata = {
   title: 'Rita Fitness Coach',
   icons: { icon: '/assets/rita-banner-portrait.jpg' },
-  metadataBase: process.env.NEXT_PUBLIC_SITE_URL
-    ? new URL(process.env.NEXT_PUBLIC_SITE_URL)
-    : undefined,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rita-fitness.vercel.app'),
 };
 
 export default function RootLayout({ children }) {
@@ -23,7 +22,10 @@ export default function RootLayout({ children }) {
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
