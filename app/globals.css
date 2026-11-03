@@ -836,6 +836,11 @@
       pointer-events: none;
     }
 
+    .community-video-card.is-playing::after,
+    .community-video-card.is-playing .community-video-play {
+      display: none;
+    }
+
     .community-video-play {
       position: absolute;
       inset: 50% auto auto 50%;

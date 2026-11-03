@@ -35,17 +35,50 @@ export function initHomeInteractions() {
 
   const communityVideoCards = [...document.querySelectorAll('.community-video-card')];
   const communityVideos = communityVideoCards.map(card => card.querySelector('video')).filter(Boolean);
+  const playedVideos = new WeakSet();
+  const fullscreenVideos = new Set();
+  const resetCommunityVideo = video => {
+    const card = video.closest('.community-video-card');
+    if (!card?.classList.contains('is-playing')) return;
+    card.classList.remove('is-playing');
+    playedVideos.delete(video);
+    fullscreenVideos.delete(video);
+    if (document.fullscreenElement === video) {
+      document.exitFullscreen().catch(() => {});
+    }
+    if (video.webkitDisplayingFullscreen) {
+      try { video.webkitExitFullscreen(); } catch {}
+    }
+    video.pause();
+    video.controls = false;
+    video.muted = true;
+    video.playsInline = true;
+    video.setAttribute('playsinline', '');
+    video.className = 'community-video-poster';
+    video.load();
+  };
+  const onCommunityPlaying = event => playedVideos.add(event.currentTarget);
+  const onCommunityPause = event => {
+    const video = event.currentTarget;
+    if (playedVideos.has(video)) resetCommunityVideo(video);
+  };
+  const onCommunityEnded = event => resetCommunityVideo(event.currentTarget);
+  const onCommunityFullscreenEnd = event => resetCommunityVideo(event.currentTarget);
+  const onFullscreenChange = () => {
+    communityVideos.forEach(video => {
+      if (document.fullscreenElement === video) fullscreenVideos.add(video);
+      else if (fullscreenVideos.has(video)) resetCommunityVideo(video);
+    });
+  };
   const onCommunityVideoClick = event => {
     const card = event.currentTarget;
     const video = card.querySelector('.community-video-poster');
     if (!video || video.controls) return;
-    document.querySelectorAll('.community-video-player').forEach(player => {
-      player.pause();
-    });
+    communityVideos.filter(player => player !== video).forEach(resetCommunityVideo);
+    card.classList.add('is-playing');
     video.className = 'community-video-player';
     video.controls = true;
     video.muted = false;
-    card.querySelector('.community-video-play')?.remove();
     const isMobileView = matchMedia('(max-width: 47.9375rem)').matches;
     if (isMobileView) {
       // iPhone Safari opens its native fullscreen player when inline playback is disabled.
@@ -62,11 +95,16 @@ export function initHomeInteractions() {
       }
     }
     const playback = video.play();
-    playback.catch(() => {
-      video.controls = true;
-    });
+    playback.catch(() => resetCommunityVideo(video));
   };
   communityVideoCards.forEach(card => card.addEventListener('click', onCommunityVideoClick));
+  communityVideos.forEach(video => {
+    video.addEventListener('playing', onCommunityPlaying);
+    video.addEventListener('pause', onCommunityPause);
+    video.addEventListener('ended', onCommunityEnded);
+    video.addEventListener('webkitendfullscreen', onCommunityFullscreenEnd);
+  });
+  document.addEventListener('fullscreenchange', onFullscreenChange);
 
   const coachGallery = document.querySelector('.coach-gallery');
   const galleryItems = coachGallery ? [...coachGallery.querySelectorAll('.coach-gallery-item')] : [];
@@ -158,6 +196,13 @@ export function initHomeInteractions() {
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
     communityVideoCards.forEach(card => card.removeEventListener('click', onCommunityVideoClick));
+    communityVideos.forEach(video => {
+      video.removeEventListener('playing', onCommunityPlaying);
+      video.removeEventListener('pause', onCommunityPause);
+      video.removeEventListener('ended', onCommunityEnded);
+      video.removeEventListener('webkitendfullscreen', onCommunityFullscreenEnd);
+    });
+    document.removeEventListener('fullscreenchange', onFullscreenChange);
     communityVideos.forEach(video => video.pause());
     if (galleryTimer) clearInterval(galleryTimer);
     if (removeGalleryTouch) removeGalleryTouch();
