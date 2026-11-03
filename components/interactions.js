@@ -33,6 +33,30 @@ export function initHomeInteractions() {
   }, { threshold: 0.5 });
   document.querySelectorAll('.counter').forEach(element => counterObserver.observe(element));
 
+  const communityVideoCards = [...document.querySelectorAll('.community-video-card')];
+  const communityVideoThumbnails = [...document.querySelectorAll('.community-video-poster')];
+  communityVideoThumbnails.forEach(video => {
+    video.addEventListener('loadeddata', () => {
+      video.currentTime = Math.min(0.1, video.duration || 0);
+      video.pause();
+    }, { once: true });
+  });
+  const onCommunityVideoClick = event => {
+    const card = event.currentTarget;
+    const video = card.querySelector('.community-video-poster');
+    if (!video || video.controls) return;
+    document.querySelectorAll('.community-video-player').forEach(player => {
+      player.pause();
+    });
+    video.className = 'community-video-player';
+    video.controls = true;
+    card.querySelector('.community-video-play')?.remove();
+    video.play().catch(() => {
+      video.controls = true;
+    });
+  };
+  communityVideoCards.forEach(card => card.addEventListener('click', onCommunityVideoClick));
+
   const coachGallery = document.querySelector('.coach-gallery');
   const galleryItems = coachGallery ? [...coachGallery.querySelectorAll('.coach-gallery-item')] : [];
   const galleryDots = coachGallery ? [...coachGallery.querySelectorAll('.coach-gallery-dot')] : [];
@@ -122,6 +146,8 @@ export function initHomeInteractions() {
     revealObserver.disconnect();
     counterObserver.disconnect();
     animationFrames.forEach(cancelAnimationFrame);
+    communityVideoCards.forEach(card => card.removeEventListener('click', onCommunityVideoClick));
+    communityVideoThumbnails.forEach(video => video.pause());
     if (galleryTimer) clearInterval(galleryTimer);
     if (removeGalleryTouch) removeGalleryTouch();
     galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));

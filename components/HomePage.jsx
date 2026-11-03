@@ -266,12 +266,21 @@ export default function HomePage() {
         </a>
       </div>
       <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 reveal">
-        <video src="/assets/video-1.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
-        <video src="/assets/video-2.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
-        <video src="/assets/video-3.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
-        <video src="/assets/video-4.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
-        <video src="/assets/video-5.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
-        <video src="/assets/video-6.mp4" muted autoPlay loop playsInline className="rounded-md aspect-[9/16] w-full" />
+        {[
+          '/assets/video-1.mp4',
+          '/assets/video-2.mp4',
+          '/assets/video-3.mp4',
+          '/assets/video-4.mp4',
+          '/assets/video-5.mp4',
+          '/assets/video-6.mp4'
+        ].map((video, index) => (
+          <div className="community-video-card" data-video-src={video} key={video}>
+            <video src={video} muted playsInline preload="metadata" aria-label={`Community video ${index + 1}`} className="community-video-poster" />
+            <button type="button" className="community-video-play" aria-label={`Play community video ${index + 1}`}>
+              <i className="fa-solid fa-play" aria-hidden="true" />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   </section>
