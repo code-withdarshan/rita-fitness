@@ -92,7 +92,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Flexible nutrition strategy</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Weekly check-ins</li>
           </ul>
-          <a href="https://share.newie.app/providers/hifhh7FaV2QSWyU0ruRHk1DN1el2" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-rose text-ink flex items-center justify-center"><i className="fa-solid fa-user" /></div>
@@ -104,7 +104,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Bi-weekly video calls</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Fully bespoke programming</li>
           </ul>
-          <a href="https://share.newie.app/providers/hifhh7FaV2QSWyU0ruRHk1DN1el2" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-clay text-white flex items-center justify-center"><i className="fa-solid fa-brain" /></div>
@@ -116,7 +116,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Confidence frameworks</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Weekly mindset audits</li>
           </ul>
-          <a href="https://share.newie.app/providers/hifhh7FaV2QSWyU0ruRHk1DN1el2" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-mocha text-white flex items-center justify-center"><i className="fa-solid fa-utensils" /></div>
@@ -128,7 +128,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Gym or home options</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Lifetime access</li>
           </ul>
-          <a href="https://share.newie.app/providers/hifhh7FaV2QSWyU0ruRHk1DN1el2" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-ink text-cream flex items-center justify-center"><i className="fa-solid fa-spa" /></div>
@@ -140,7 +140,7 @@ export default function HomePage() {
             <li><i className="fa-solid fa-check text-rose mr-2" />Stress management</li>
             <li><i className="fa-solid fa-check text-rose mr-2" />Routine architecture</li>
           </ul>
-          <a href="https://share.newie.app/providers/hifhh7FaV2QSWyU0ruRHk1DN1el2" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
+          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
         </div>
         <div className="card-hover program-cta relative rounded-lg p-6 sm:p-8 reveal bg-black text-white overflow-hidden">
           <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-rose/40 blur-3xl" />
