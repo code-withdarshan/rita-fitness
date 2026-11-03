@@ -273,9 +273,9 @@ export default function HomePage() {
           ['/assets/video-4.mp4', '/assets/rita-training.jpg'],
           ['/assets/video-5.mp4', '/assets/transform-1.jpg'],
           ['/assets/video-6.mp4', '/assets/transform-3.jpg']
-        ].map(([video, poster], index) => (
+        ].map(([video], index) => (
           <div className="community-video-card" data-video-src={video} key={video}>
-            <video src={video} poster={poster} muted playsInline preload="metadata" aria-label={`Community video ${index + 1}`} className="community-video-poster" />
+            <video src={video} muted playsInline preload="auto" aria-label={`Community video ${index + 1}`} className="community-video-poster" />
             <button type="button" className="community-video-play" aria-label={`Play community video ${index + 1}`}>
               <i className="fa-solid fa-play" aria-hidden="true" />
             </button>

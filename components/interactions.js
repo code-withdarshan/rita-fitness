@@ -37,7 +37,7 @@ export function initHomeInteractions() {
   const communityVideoThumbnails = [...document.querySelectorAll('.community-video-poster')];
   communityVideoThumbnails.forEach(video => {
     video.addEventListener('loadeddata', () => {
-      video.currentTime = Math.min(0.1, video.duration || 0);
+      video.currentTime = 0;
       video.pause();
     }, { once: true });
   });
