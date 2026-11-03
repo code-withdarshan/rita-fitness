@@ -10,8 +10,8 @@ export default function HomePage() {
   <section id="top" className="hero-split pt-20">
     <div className="hero-copy reveal">
       <span className="text-xs uppercase tracking-[0.28em] font-semibold text-black/70">Now coaching women worldwide</span>
-      <h1 className="font-display text-4xl sm:text-5xl lg:text-[4.25rem] leading-[1.06] mt-6 font-normal">
-        <span className="italic text-[#c57291]">Imagine where</span><br /> you could be in <span className="grad-text italic">12
+      <h1 className="hero-title font-display text-4xl sm:text-5xl lg:text-[4.25rem] leading-[1.06] mt-6 font-normal">
+        <span className="italic text-[#c57291]">Imagine where</span><br /> you could be in <span className="heading-highlight grad-text italic">16
           weeks.</span>
       </h1>
       <p className="mt-7 text-base text-ink/70 max-w-md leading-relaxed">
@@ -19,9 +19,9 @@ export default function HomePage() {
         transformations with structure, support and someone actually guiding you.
       </p>
       <div className="hero-actions mt-9">
-        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="px-6 py-3.5 rounded-md bg-black text-white text-xs uppercase tracking-wider font-bold hover:bg-rose hover:text-black transition-colors">Start
+        <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="px-6 py-3.5 rounded-md bg-black text-white text-sm normal-case tracking-normal font-normal hover:bg-rose hover:text-black transition-colors">Start
           your transformation <i className="fa-solid fa-arrow-right ml-2 text-xs" /></a>
-        <a href="#programs" className="px-6 py-3.5 rounded-md border border-black/40 text-black text-xs uppercase tracking-wider font-bold hover:bg-white transition">Explore
+        <a href="#programs" className="px-6 py-3.5 rounded-md border border-black/40 text-black text-sm normal-case tracking-normal font-normal hover:bg-white transition">Explore
           programs</a>
       </div>
       <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
@@ -76,7 +76,7 @@ export default function HomePage() {
     <div className="max-w-[90rem] mx-auto px-6">
       <div className="text-center max-w-2xl mx-auto reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Online Coaching Programs</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Built for women who are <span className="grad-text italic">done
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Built for women who are <span className="heading-highlight grad-text italic">done
             waiting</span> for the right time.</h2>
         <p className="mt-4 text-ink/70">You don't need a perfect routine or a child-free life to decide to start. You just
           need a plan, a coach, and a system that fits your real life.</p>
@@ -84,7 +84,7 @@ export default function HomePage() {
       <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-ink text-cream flex items-center justify-center"><i className="fa-solid fa-dumbbell" /></div>
-          <h3 className="font-display text-2xl mt-5">12-Week Transformation</h3>
+          <h3 className="font-display text-2xl mt-5">16-Week Transformation</h3>
           <p className="mt-3 text-ink/70 text-sm">Custom training, nutrition and accountability the flagship program women
             come to me for.</p>
           <ul className="mt-5 text-sm text-ink/80 space-y-2">
@@ -164,7 +164,7 @@ export default function HomePage() {
       </div>
       <div className="reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Meet your coach</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Hi, I'm <span className="grad-text italic">Rita</span> and I
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Hi, I'm <span className="heading-highlight grad-text italic">Rita</span> and I
           coach women into the strongest version of themselves.</h2>
         <p className="mt-5 text-ink/70">For nearly a decade I've helped women rebuild their bodies, their confidence and
           their relationship with food and training. My approach is simple: real structure, no extremes, zero shame
@@ -199,7 +199,7 @@ export default function HomePage() {
     <div className="max-w-[90rem] mx-auto px-6 relative">
       <div className="text-center max-w-2xl mx-auto reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Real Transformations</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Some of these women are <span className="grad-text italic">working
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Some of these women are <span className="heading-highlight grad-text italic">working
             +10 hours a day.</span></h2>
         <p className="mt-4 text-ink/70">The difference? They stopped negotiating with themselves and committed to the
           process.</p>
@@ -215,7 +215,7 @@ export default function HomePage() {
         <figure className="card-hover relative rounded-lg overflow-hidden reveal">
           <img src="/assets/transform-2.jpg" className="w-full h-[26.25rem] object-cover" alt="Client transformation 2" />
           <figcaption className="p-5 bg-white">
-            <div className="text-mocha text-xs uppercase tracking-widest">12 weeks</div>
+            <div className="text-mocha text-xs uppercase tracking-widest">16 weeks</div>
             <div className="font-display text-2xl">Aanya full-time exec</div>
           </figcaption>
         </figure>
@@ -237,7 +237,7 @@ export default function HomePage() {
           <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Lean muscle gain</div>
         </div>
         <div className="glass-soft rounded-md p-6 text-center">
-          <div className="font-display text-3xl text-mocha">12wks</div>
+          <div className="font-display text-3xl text-mocha">16wks</div>
           <div className="text-xs uppercase tracking-widest text-ink/70 mt-1">Avg program length</div>
         </div>
         <div className="glass-soft rounded-md p-6 text-center">
@@ -252,7 +252,7 @@ export default function HomePage() {
       <div className="flex flex-wrap items-end justify-between gap-6 reveal">
         <div>
           <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">@rita_fitnesscoach</span>
-          <h2 className="font-display text-4xl md:text-5xl mt-3">Inside the <span className="grad-text italic">community</span>
+          <h2 className="font-display text-4xl md:text-5xl mt-3">Inside the <span className="heading-highlight grad-text italic">community</span>
           </h2>
         </div>
         <a href="https://instagram.com/rita_fitnesscoach" target="_blank" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-ink text-cream hover:bg-rose hover:text-black transition">
@@ -274,7 +274,7 @@ export default function HomePage() {
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 reveal">
         <div className="max-w-3xl">
           <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Client Reviews</span>
-          <h2 className="font-display text-4xl md:text-5xl mt-3">Words from women who <span className="grad-text italic">decided
+          <h2 className="font-display text-4xl md:text-5xl mt-3">Words from women who <span className="heading-highlight grad-text italic">decided
               to start.</span></h2>
         </div>
         <div className="flex items-center gap-3 shrink-0" aria-label="Testimonial navigation">
@@ -325,7 +325,7 @@ export default function HomePage() {
     <div className="max-w-4xl mx-auto px-6">
       <div className="text-center reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Questions</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Everything you need to <span className="grad-text italic">know.</span></h2>
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Everything you need to <span className="heading-highlight grad-text italic">know.</span></h2>
       </div>
       <div className="faq-grid mt-12 reveal">
         <details className="glass rounded-md p-6 group">
@@ -338,7 +338,7 @@ export default function HomePage() {
           <summary className="flex justify-between items-center cursor-pointer font-display text-xl">How long until I see
             results?<span className="chev"><i className="fa-solid fa-plus text-sm" /></span></summary>
           <p className="mt-4 text-ink/70">Most clients see clear physical and mindset changes within the first 4 weeks. The
-            full transformation typically lands in the 12–16 week window.</p>
+            full transformation typically lands in the 16-week window.</p>
         </details>
         <details className="glass rounded-md p-6">
           <summary className="flex justify-between items-center cursor-pointer font-display text-xl">I'm a beginner is
@@ -365,7 +365,7 @@ export default function HomePage() {
     <div className="max-w-[90rem] mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
       <div className="reveal">
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Book a free consultation</span>
-        <h2 className="font-display text-4xl md:text-5xl mt-3">Let's design your <span className="grad-text italic">12
+        <h2 className="font-display text-4xl md:text-5xl mt-3">Let's design your <span className="heading-highlight grad-text italic">16
             weeks.</span></h2>
         <p className="mt-5 text-ink/70 max-w-md">A 20-minute call to understand your goals, your lifestyle and the right
           program for you. No pressure, just clarity.</p>

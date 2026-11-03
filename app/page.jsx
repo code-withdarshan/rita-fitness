@@ -6,7 +6,7 @@ export const metadata = {
   keywords: ['online fitness coach', 'women transformation coach', 'mindset coach', 'personal training', 'fitness program'],
   openGraph: {
     title: "Rita | Women's Transformation Coach",
-    description: 'Imagine where you could be in 12 weeks — with structure, support and someone guiding you.',
+    description: 'Imagine where you could be in 16 weeks — with structure, support and someone guiding you.',
     images: ['/assets/rita-banner-portrait.jpg'],
   },
 };

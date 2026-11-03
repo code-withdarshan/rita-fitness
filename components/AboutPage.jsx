@@ -6,7 +6,7 @@ export default function AboutPage() {
     <section className="hero" aria-labelledby="page-title">
       <div className="hero-copy">
         <span className="eyebrow">About your coach</span>
-        <h1 id="page-title">Meet <em>Rita Silva</em></h1>
+        <h1 id="page-title">Meet <em className="heading-highlight">Rita Silva</em></h1>
         <p className="hero-subtitle">Fitness Coach | Strength. Mindset. Transformation.</p>
         <a className="button" href="#story">Read my story <i className="fa-solid fa-arrow-down" aria-hidden="true" /></a>
       </div>
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <div className="container story-grid">
         <div className="story-aside">
           <span className="eyebrow">Rita Silva</span>
-          <h2 id="story-title">My Story — From <em>Passion</em> to Purpose</h2>
+          <h2 id="story-title">My Story — From <em className="heading-highlight">Passion</em> to Purpose</h2>
           <img src="/assets/rita-coach-studio.jpg" alt="Rita in her studio" loading="lazy" />
         </div>
         <div className="prose">
@@ -35,7 +35,7 @@ export default function AboutPage() {
         <div className="split-media training"><img src="/assets/rita-coach-strength.jpg" alt="Rita strength training with dumbbells" loading="lazy" /></div>
         <div className="split-copy">
           <span className="eyebrow">The journey</span>
-          <h2 id="journey-title">From Dancing to <em>Bodybuilding</em> and Powerlifting</h2>
+          <h2 id="journey-title">From Dancing to <em className="heading-highlight">Bodybuilding</em> and Powerlifting</h2>
           <div className="prose">
             <p>As my passion for fitness grew, I challenged myself in new ways.</p>
             <p>I stepped into the world of bodybuilding, preparing for and competing in a bodybuilding show. That experience taught me about dedication, nutrition, body composition, and the mental strength required to pursue a challenging goal.</p>
@@ -51,7 +51,7 @@ export default function AboutPage() {
       <div className="container split">
         <div className="split-copy">
           <span className="eyebrow">My purpose</span>
-          <h2 id="purpose-title">Turning My Passion Into <em>My Purpose</em></h2>
+          <h2 id="purpose-title">Turning My Passion Into <em className="heading-highlight">My Purpose</em></h2>
           <div className="prose">
             <p>Inspired by my own transformation, I pursued further education in health and fitness, including a Diploma and Bachelor of Health Science, and built my career as a fitness professional.</p>
             <p>Over the past six years, I’ve developed my personal training business in Australia, helping clients transform their physiques, improve their strength, build confidence, and create healthier lifestyles.</p>
@@ -65,7 +65,7 @@ export default function AboutPage() {
     <section className="content-section soft-section philosophy" aria-labelledby="philosophy-title">
       <div className="container philosophy-inner">
         <span className="eyebrow">How I coach</span>
-        <h2 id="philosophy-title">My Coaching <em>Philosophy</em></h2>
+        <h2 id="philosophy-title">My Coaching <em className="heading-highlight">Philosophy</em></h2>
         <div className="prose">
           <p>I believe lasting results come from the combination of strength training, nutrition, mindset, and sustainable habits.</p>
           <p>My approach isn’t about quick fixes, extreme restrictions, or chasing perfection.</p>

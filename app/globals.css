@@ -62,29 +62,26 @@
     }
 
     @media (max-width: 39.9375rem) {
+      .hero-actions {
+        flex-direction: column;
+        gap: .75rem;
+      }
+
       .hero-actions a {
-        min-width: 0;
+        width: 100%;
         white-space: normal;
-        font-size: .75rem;
+        font-size: .875rem;
         line-height: 1.25;
         min-height: 2.75rem;
-        padding-inline: .75rem;
-      }
-
-      .hero-actions a:first-child {
-        flex: 1.25;
-      }
-
-      .hero-actions a:last-child {
-        flex: .75;
+        padding-inline: 1rem;
       }
     }
 
     @media (max-width: 22.5rem) {
       .hero-actions a {
-        font-size: .6875rem;
+        font-size: .875rem;
         letter-spacing: 0;
-        padding-inline: .25rem;
+        padding-inline: 1rem;
       }
 
       .hero-actions a:first-child i {
@@ -99,7 +96,7 @@
 
       .hero-copy {
         min-height: auto;
-        padding: 4rem 1.5rem;
+        padding: 3rem 1.5rem;
       }
 
       .hero-media {
@@ -111,11 +108,32 @@
       font-family: 'Inter', sans-serif;
     }
 
+    .hero-title {
+      line-height: 1.12;
+    }
+
+    .hero-title .grad-text {
+      display: inline-block;
+    }
+
+    .heading-highlight {
+      display: inline-block;
+      line-height: 1.35;
+      padding-block: .12em;
+    }
+
     .grad-text {
       background: linear-gradient(120deg, #b4557c 0%, #bf6688 50%, #c57291 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
+    }
+
+    .heading-highlight.grad-text {
+      background: none;
+      -webkit-background-clip: initial;
+      background-clip: initial;
+      color: #c57291;
     }
 
     .glass {
@@ -350,14 +368,14 @@
     }
 
     @media (max-width: 39.9375rem) {
-      .hero-copy h1 {
-        font-size: clamp(2.125rem, 9vw, 2.5rem);
+      .hero-title {
+        font-size: clamp(1.875rem, 8vw, 2.25rem);
         line-height: 1.12;
         letter-spacing: -.035em;
       }
 
-      .hero-copy h1 .grad-text {
-        white-space: nowrap;
+      .hero-title .grad-text {
+        white-space: normal;
       }
 
       section h2.font-display {
@@ -388,7 +406,7 @@
       }
 
       section .text-xs.uppercase {
-        font-size: .8125rem;
+        font-size: .75rem;
         line-height: 1.5;
         letter-spacing: .14em;
       }
@@ -529,7 +547,7 @@
       .about-page .hero h1 { font-size: clamp(2.5rem,10vw,3.25rem); line-height: 1.08; }
       .about-page .hero-subtitle { font-size: 1rem; }
       .about-page .hero-media { min-height: 24rem; height: 90vw; }
-      .about-page .eyebrow { font-size: .8125rem; letter-spacing: .14em; }
+      .about-page .eyebrow { font-size: .75rem; letter-spacing: .14em; }
       .about-page .story-aside h2, .about-page .split-copy h2, .about-page .philosophy h2 { font-size: clamp(1.875rem,8vw,2.25rem); }
       .about-page .prose p { font-size: .9375rem; line-height: 1.7; }
       .about-page .content-section { padding-block: 4.5rem; }
