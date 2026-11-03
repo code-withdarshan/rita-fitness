@@ -295,12 +295,12 @@ export default function HomePage() {
           <h2 className="font-display text-4xl md:text-5xl mt-3">Words from women who <span className="heading-highlight grad-text italic">decided
               to start.</span></h2>
         </div>
-        <div className="flex items-center gap-3 shrink-0" aria-label="Testimonial navigation">
+        <div className="hidden sm:flex items-center gap-3 shrink-0" aria-label="Testimonial navigation">
           <button type="button" aria-label="Previous review" className="testiBtn testimonial-nav-button w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={-1}><i className="fa-solid fa-arrow-left" /></button>
           <button type="button" aria-label="Next review" className="testiBtn testimonial-nav-button w-11 h-11 rounded-md border border-black bg-black text-white hover:border-rose hover:bg-rose hover:text-black transition" data-dir={1}><i className="fa-solid fa-arrow-right" /></button>
         </div>
       </div>
-      <div className="mt-10 relative overflow-hidden reveal">
+      <div id="testiViewport" className="mt-10 relative overflow-hidden reveal">
         <div id="testiTrack" className="testi-track flex">
           <div className="min-w-full px-2">
             <div className="glass rounded-lg p-10 text-center max-w-3xl mx-auto">

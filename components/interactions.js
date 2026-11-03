@@ -186,6 +186,7 @@ export function initHomeInteractions() {
   }
 
   const track = document.getElementById('testiTrack');
+  const viewport = document.getElementById('testiViewport');
   const dotsContainer = document.getElementById('testiDots');
   const buttons = [...document.querySelectorAll('.testiBtn')];
   const slides = track ? [...track.children] : [];
@@ -195,6 +196,9 @@ export function initHomeInteractions() {
   let logicalIndex = 0;
   let animating = false;
   let timer = null;
+  let touchStartX = null;
+  let touchStartY = null;
+  const mobileReviews = matchMedia('(max-width: 39.9375rem)');
   const visibleSlides = () => {
     if (matchMedia('(min-width: 64rem)').matches) return 3;
     if (matchMedia('(min-width: 40rem)').matches) return 2;
@@ -254,6 +258,29 @@ export function initHomeInteractions() {
     moveBy(forward <= backward ? forward : -backward);
     restartTimer();
   };
+  const onTouchStart = (event) => {
+    if (!mobileReviews.matches || event.touches.length !== 1) {
+      touchStartX = null;
+      touchStartY = null;
+      return;
+    }
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+  };
+  const onTouchEnd = (event) => {
+    if (touchStartX === null || event.changedTouches.length !== 1) return;
+    const distanceX = event.changedTouches[0].clientX - touchStartX;
+    const distanceY = event.changedTouches[0].clientY - touchStartY;
+    touchStartX = null;
+    touchStartY = null;
+    if (!mobileReviews.matches || Math.abs(distanceX) < 40 || Math.abs(distanceX) <= Math.abs(distanceY)) return;
+    moveBy(distanceX < 0 ? 1 : -1);
+    restartTimer();
+  };
+  const onTouchCancel = () => {
+    touchStartX = null;
+    touchStartY = null;
+  };
   const onTransitionEnd = (event) => {
     if (event.target !== track || event.propertyName !== 'transform') return;
     if (physicalIndex < slideCount || physicalIndex >= slideCount * 2) jumpToRealSlide();
@@ -279,6 +306,9 @@ export function initHomeInteractions() {
     dotsContainer?.replaceChildren(...dots);
     buttons.forEach(button => button.addEventListener('click', onButtonClick));
     dotsContainer?.addEventListener('click', onDotClick);
+    viewport?.addEventListener('touchstart', onTouchStart, { passive: true });
+    viewport?.addEventListener('touchend', onTouchEnd, { passive: true });
+    viewport?.addEventListener('touchcancel', onTouchCancel);
     track.addEventListener('transitionend', onTransitionEnd);
     window.addEventListener('resize', onResize);
     restartTimer();
@@ -305,6 +335,9 @@ export function initHomeInteractions() {
     galleryDots.forEach(dot => dot.replaceWith(dot.cloneNode(true)));
     buttons.forEach(button => button.removeEventListener('click', onButtonClick));
     dotsContainer?.removeEventListener('click', onDotClick);
+    viewport?.removeEventListener('touchstart', onTouchStart);
+    viewport?.removeEventListener('touchend', onTouchEnd);
+    viewport?.removeEventListener('touchcancel', onTouchCancel);
     dotsContainer?.replaceChildren();
     track?.removeEventListener('transitionend', onTransitionEnd);
     clones.forEach(clone => clone.remove());

@@ -649,6 +649,12 @@
       transition: transform .8s cubic-bezier(.2, .7, .2, 1);
     }
 
+    @media (max-width: 39.9375rem) {
+      #testiViewport {
+        touch-action: pan-y;
+      }
+    }
+
     .testi-dot {
       display: grid;
       width: 2rem;
