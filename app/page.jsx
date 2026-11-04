@@ -1,9 +1,9 @@
 import HomePage from '../components/HomePage';
 
 export const metadata = {
-  title: "Rita | Online Fitness, Mindset & Women's Transformation Coach",
-  description: 'Premium online coaching for women — fitness, mindset and lifestyle transformations with Rita. Build strength, confidence and the body you actually want.',
-  keywords: ['online fitness coach', 'women transformation coach', 'mindset coach', 'personal training', 'fitness program'],
+  title: "Rita | Face-to-Face Personal Training & Online Coaching",
+  description: 'Personal training sessions and online coaching for women with Rita. Personalised training, nutrition guidance and ongoing support.',
+  keywords: ['online fitness coach', 'women transformation coach', 'face-to-face personal training', 'personal training', 'fitness coaching'],
   openGraph: {
     title: "Rita | Women's Transformation Coach",
     description: 'Imagine where you could be in 16 weeks — with structure, support and someone guiding you.',

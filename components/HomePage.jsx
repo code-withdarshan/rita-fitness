@@ -15,14 +15,14 @@ export default function HomePage() {
           weeks.</span>
       </h1>
       <p className="mt-7 text-base text-ink/70 max-w-md leading-relaxed">
-        Premium online coaching for women ready to stop negotiating with themselves fitness, mindset and lifestyle
-        transformations with structure, support and someone actually guiding you.
+        Face-to-face personal training and online coaching for women who want a plan that fits real life, with training,
+        nutrition guidance and ongoing support together.
       </p>
       <div className="hero-actions mt-9">
         <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action px-6 py-3.5 rounded-md bg-black text-white text-sm normal-case tracking-normal font-normal hover:bg-rose hover:text-black transition-colors">Start
           your transformation <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         <a href="#programs" className="px-6 py-3.5 rounded-md border border-black/40 text-black text-sm normal-case tracking-normal font-normal hover:bg-white transition">Explore
-          programs</a>
+          coaching</a>
       </div>
       <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-6">
         <div className="flex -space-x-3">
@@ -75,81 +75,34 @@ export default function HomePage() {
   <section id="programs" className="py-16 md:py-24 section-soft">
     <div className="max-w-[90rem] mx-auto px-6">
       <div className="programs-heading text-center max-w-3xl mx-auto reveal">
-        <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Online Coaching Programs</span>
+        <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Ways to train with Rita</span>
         <h2 className="programs-title font-display text-4xl md:text-5xl mt-3">Built for women who are<span className="desktop-title-break"><br /></span>{' '}
           <span className="heading-highlight grad-text italic">done waiting</span> for the right time.</h2>
         <p className="mt-4 text-ink/70">You don't need a perfect routine or a child-free life to decide to start. You just
           need a plan, a coach, and a system that fits your real life.</p>
       </div>
-      <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="mt-14 grid md:grid-cols-2 gap-6">
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-ink text-cream flex items-center justify-center"><i className="fa-solid fa-dumbbell" /></div>
-          <h3 className="font-display text-2xl mt-5">16-Week Transformation</h3>
-          <p className="mt-3 text-ink/70 text-sm">Custom training, nutrition and accountability the flagship program women
-            come to me for.</p>
+          <h3 className="font-display text-2xl mt-5">Face-to-Face Sessions</h3>
+          <p className="mt-3 text-ink/70 text-sm">Personal training with Rita in person, built around your goals and your starting point.</p>
           <ul className="mt-5 text-sm text-ink/80 space-y-2">
-            <li><i className="fa-solid fa-check text-rose mr-2" />Personalised training plan</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Flexible nutrition strategy</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Weekly check-ins</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Guided, personalised training</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Nutrition and habit guidance</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Technique, progress and accountability</li>
           </ul>
           <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
         <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
           <div className="w-12 h-12 rounded-md bg-rose text-ink flex items-center justify-center"><i className="fa-solid fa-user" /></div>
-          <h3 className="font-display text-2xl mt-5">1:1 Premium Coaching</h3>
-          <p className="mt-3 text-ink/70 text-sm">High-touch private coaching with direct daily access for women who want
-            the fastest, most personal route.</p>
+          <h3 className="font-display text-2xl mt-5">Online Training</h3>
+          <p className="mt-3 text-ink/70 text-sm">Personalised coaching wherever you train, with support that fits your schedule and lifestyle.</p>
           <ul className="mt-5 text-sm text-ink/80 space-y-2">
-            <li><i className="fa-solid fa-check text-rose mr-2" />Daily WhatsApp support</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Bi-weekly video calls</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Fully bespoke programming</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Training tailored to home or gym</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Flexible nutrition and mindset support</li>
+            <li><i className="fa-solid fa-check text-rose mr-2" />Regular check-ins and adjustments</li>
           </ul>
           <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
-        </div>
-        <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
-          <div className="w-12 h-12 rounded-md bg-clay text-white flex items-center justify-center"><i className="fa-solid fa-brain" /></div>
-          <h3 className="font-display text-2xl mt-5">Mindset Coaching</h3>
-          <p className="mt-3 text-ink/70 text-sm">Stop negotiating with yourself. Rebuild discipline, confidence and
-            identity the work no plan can replace.</p>
-          <ul className="mt-5 text-sm text-ink/80 space-y-2">
-            <li><i className="fa-solid fa-check text-rose mr-2" />Habit &amp; identity work</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Confidence frameworks</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Weekly mindset audits</li>
-          </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
-        </div>
-        <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
-          <div className="w-12 h-12 rounded-md bg-mocha text-white flex items-center justify-center"><i className="fa-solid fa-utensils" /></div>
-          <h3 className="font-display text-2xl mt-5">Fitness &amp; Nutrition Plans</h3>
-          <p className="mt-3 text-ink/70 text-sm">Done-for-you plans built around your goals, schedule, food preferences and
-            training level no extremes.</p>
-          <ul className="mt-5 text-sm text-ink/80 space-y-2">
-            <li><i className="fa-solid fa-check text-rose mr-2" />Macro-based meal plan</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Gym or home options</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Lifetime access</li>
-          </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
-        </div>
-        <div className="card-hover program-card glass rounded-lg p-6 sm:p-8 reveal">
-          <div className="w-12 h-12 rounded-md bg-ink text-cream flex items-center justify-center"><i className="fa-solid fa-spa" /></div>
-          <h3 className="font-display text-2xl mt-5">Lifestyle Coaching</h3>
-          <p className="mt-3 text-ink/70 text-sm">For busy women working +10 hours a day. Build a sustainable lifestyle that
-            holds up when life doesn't slow down.</p>
-          <ul className="mt-5 text-sm text-ink/80 space-y-2">
-            <li><i className="fa-solid fa-check text-rose mr-2" />Energy &amp; sleep protocols</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Stress management</li>
-            <li><i className="fa-solid fa-check text-rose mr-2" />Routine architecture</li>
-          </ul>
-          <a href="https://form.jotform.com/253616429002047" target="_blank" rel="noopener" className="arrow-action mt-6 inline-flex items-center text-mocha font-medium hover:text-rose">Apply now <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
-        </div>
-        <div className="card-hover program-cta relative rounded-lg p-6 sm:p-8 reveal bg-black text-white overflow-hidden">
-          <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-rose/40 blur-3xl" />
-          <span className="text-xs uppercase tracking-[0.3em] font-semibold text-rose">Most popular</span>
-          <h3 className="font-display text-2xl mt-3">Signature Method</h3>
-          <p className="mt-3 text-white/75 text-sm">Training + nutrition + mindset + lifestyle the complete Rita method
-            for women who want it all to finally click.</p>
-          <a href="https://form.jotform.com/253616429002047" className="arrow-action mt-6 inline-flex items-center px-5 py-3 rounded-md border border-white/70 text-white hover:bg-white hover:text-black transition">Book
-            consultation <span className="arrow-icon ml-2" aria-hidden="true"><i className="arrow-current fa-solid fa-arrow-up" /><i className="arrow-next fa-solid fa-arrow-up" /></span></a>
         </div>
       </div>
     </div>
@@ -207,8 +160,7 @@ export default function HomePage() {
         <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">Real Transformations</span>
         <h2 className="font-display text-4xl md:text-5xl mt-3">Some of these women are <span className="heading-highlight grad-text italic">working
             +10 hours a day.</span></h2>
-        <p className="mt-4 text-ink/70">The difference? They stopped negotiating with themselves and committed to the
-          process.</p>
+        <p className="mt-4 text-ink/70">Every journey is different. These clients made progress with consistent training and support.</p>
       </div>
       <div className="mt-14 grid md:grid-cols-3 gap-6">
         <figure className="card-hover relative rounded-lg overflow-hidden reveal">
@@ -244,7 +196,7 @@ export default function HomePage() {
         </div>
         <div className="result-stat glass-soft rounded-md p-6 text-center">
           <div className="result-stat-value font-display text-3xl text-mocha">16wks</div>
-          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Avg program length</div>
+          <div className="result-stat-label text-xs uppercase tracking-widest text-ink/70 mt-1">Coaching milestone</div>
         </div>
         <div className="result-stat glass-soft rounded-md p-6 text-center">
           <div className="result-stat-value font-display text-3xl text-mocha">100%</div>
@@ -258,7 +210,7 @@ export default function HomePage() {
       <div className="flex flex-wrap items-end justify-between gap-6 reveal">
         <div>
           <span className="text-xs uppercase tracking-[0.3em] font-semibold text-mocha">@rita_fitnesscoach</span>
-          <h2 className="font-display text-4xl md:text-5xl mt-3">Inside the <span className="heading-highlight grad-text italic">community</span>
+          <h2 className="font-display text-4xl md:text-5xl mt-3">Training with <span className="heading-highlight grad-text italic">Rita</span>
           </h2>
         </div>
         <a href="https://instagram.com/rita_fitnesscoach" target="_blank" className="inline-flex items-center gap-2 px-5 py-3 rounded-md bg-ink text-cream hover:bg-rose hover:text-black transition">
@@ -350,8 +302,7 @@ export default function HomePage() {
         <details className="glass rounded-md p-6 group">
           <summary className="flex justify-between items-center cursor-pointer font-display text-xl">Do I need a gym to work
             with you?<span className="chev"><i className="fa-solid fa-plus text-sm" /></span></summary>
-          <p className="mt-4 text-ink/70">No. Programs are fully built around your situation gym, home, hotel, minimal
-            equipment. We design around your real life, not the other way around.</p>
+          <p className="mt-4 text-ink/70">No. Online training can be tailored to your home, gym or available equipment. We design around your real life.</p>
         </details>
         <details className="glass rounded-md p-6">
           <summary className="flex justify-between items-center cursor-pointer font-display text-xl">How long until I see
@@ -366,16 +317,13 @@ export default function HomePage() {
             fit to start you need to start to get fit.</p>
         </details>
         <details className="glass rounded-md p-6">
-          <summary className="flex justify-between items-center cursor-pointer font-display text-xl">Is the nutrition plan
-            restrictive?<span className="chev"><i className="fa-solid fa-plus text-sm" /></span></summary>
-          <p className="mt-4 text-ink/70">Never. No banned foods, no extremes. We build flexible nutrition around your
-            preferences, your culture and your schedule.</p>
+          <summary className="flex justify-between items-center cursor-pointer font-display text-xl">Is nutrition support included?<span className="chev"><i className="fa-solid fa-plus text-sm" /></span></summary>
+          <p className="mt-4 text-ink/70">Yes. Nutrition guidance is part of your coaching, alongside training and habit support. It is tailored to your preferences and schedule.</p>
         </details>
         <details className="glass rounded-md p-6">
           <summary className="flex justify-between items-center cursor-pointer font-display text-xl">How do we
             communicate?<span className="chev"><i className="fa-solid fa-plus text-sm" /></span></summary>
-          <p className="mt-4 text-ink/70">Through WhatsApp and a private coaching app, plus video check-ins. You're never
-            coaching alone.</p>
+          <p className="mt-4 text-ink/70">We will agree on the right way to stay in touch for your coaching, whether we train face to face or online.</p>
         </details>
       </div>
     </div>
@@ -387,7 +335,7 @@ export default function HomePage() {
         <h2 className="font-display text-4xl md:text-5xl mt-3">Let's design your <span className="heading-highlight grad-text italic">16
             weeks.</span></h2>
         <p className="mt-5 text-ink/70 max-w-md">A 20-minute call to understand your goals, your lifestyle and the right
-          program for you. No pressure, just clarity.</p>
+          coaching option for you. No pressure, just clarity.</p>
         <div className="mt-8 space-y-4">
           <div className="flex items-center gap-4">
             <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i className="fa-solid fa-check" /></div><span>Personal goal &amp; lifestyle audit</span>
@@ -396,7 +344,7 @@ export default function HomePage() {
             <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i className="fa-solid fa-check" /></div><span>Honest assessment of where you are</span>
           </div>
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i className="fa-solid fa-check" /></div><span>Custom program recommendation</span>
+            <div className="w-10 h-10 rounded-full glass flex items-center justify-center text-rose"><i className="fa-solid fa-check" /></div><span>Coaching recommendation</span>
           </div>
         </div>
       </div>
@@ -415,8 +363,7 @@ export default function HomePage() {
     <div className="max-w-[90rem] mx-auto px-6 grid md:grid-cols-4 gap-10">
       <div className="md:col-span-2">
         <div className="font-display text-3xl">Rita<span className="text-rose">.</span></div>
-        <p className="mt-4 text-white/70 max-w-sm">Online fitness, mindset and women's transformation coaching. Stop
-          negotiating with yourself start the version of you that you keep imagining.</p>
+        <p className="mt-4 text-white/70 max-w-sm">Face-to-face personal training and online coaching for women, with training, nutrition guidance and support in one place.</p>
         <div className="mt-6 flex gap-3">
           <a href="https://instagram.com/rita_fitnesscoach" target="_blank" className="w-11 h-11 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-rose hover:text-black transition"><i className="fa-brands fa-instagram" /></a>
           <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank" className="w-11 h-11 rounded-full border border-white/20 bg-white/10 flex items-center justify-center hover:bg-rose hover:text-black transition"><i className="fa-solid fa-link" /></a>
@@ -427,8 +374,8 @@ export default function HomePage() {
       <div>
         <div className="text-xs uppercase tracking-[0.3em] font-semibold text-rose">Coaching</div>
         <ul className="mt-4 space-y-2 text-white/80">
-          <li><a className="hover:text-rose transition" href="#programs">Programs</a></li>
-          <li><a className="hover:text-rose transition" href="#coaching">1:1 Coaching</a></li>
+          <li><a className="hover:text-rose transition" href="#programs">Services</a></li>
+          <li><a className="hover:text-rose transition" href="#coaching">Meet Rita</a></li>
           <li><a className="hover:text-rose transition" href="/about">About Rita</a></li>
           <li><a className="hover:text-rose transition" href="#results">Transformations</a></li>
           <li><a className="hover:text-rose transition" href="#testimonials">Reviews</a></li>

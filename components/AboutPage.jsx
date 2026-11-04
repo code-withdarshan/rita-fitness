@@ -89,7 +89,7 @@ export default function AboutPage() {
       <div className="footer-grid">
         <div>
           <div className="footer-brand">Rita<span>.</span></div>
-          <p>Online fitness, mindset and women's transformation coaching. Stop negotiating with yourself start the version of you that you keep imagining.</p>
+          <p>Face-to-face personal training and online coaching for women, with training, nutrition guidance and support in one place.</p>
           <div className="socials">
             <a href="https://instagram.com/rita_fitnesscoach" target="_blank" rel="noopener" aria-label="Instagram"><i className="fa-brands fa-instagram" aria-hidden="true" /></a>
             <a href="https://linktr.ee/rita_fitnesscoach8" target="_blank" rel="noopener" aria-label="All links"><i className="fa-solid fa-link" aria-hidden="true" /></a>
@@ -101,7 +101,7 @@ export default function AboutPage() {
           <nav className="footer-links" aria-label="Footer navigation">
             <a href="/">Home</a>
             <a href="/about" aria-current="page">About Rita</a>
-            <a href="/#programs">Programs</a>
+            <a href="/#programs">Services</a>
             <a href="/#results">Transformations</a>
           </nav>
         </div>

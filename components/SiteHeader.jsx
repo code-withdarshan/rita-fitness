@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const links = [
-  { label: 'Programs', hash: 'programs' },
+  { label: 'Services', hash: 'programs' },
   { label: 'Coaching', hash: 'coaching' },
   { label: 'About', href: '/about' },
   { label: 'Results', hash: 'results' },
